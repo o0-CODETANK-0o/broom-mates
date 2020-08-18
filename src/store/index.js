@@ -1,9 +1,10 @@
-import {createStore} from "redux"
-import rootReducer from "../reducers/"
+import { createStore } from 'redux';
+import rootReducer from '../reducers/';
 
-const initialState=[]
+const initialState = {
+  show: { registerwg1: true, registerwg2: false },
+};
 
-export const store=createStore(rootReducer,initialState);
-
+export const store = createStore(rootReducer, initialState);
 
 // export default store;

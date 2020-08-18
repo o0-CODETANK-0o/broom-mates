@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RegisterWG4 = () => {
+const RegisterUser= () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const RegisterWG4 = () => {
   );
 }
 
-export default RegisterWG4;
+export default RegisterUser;

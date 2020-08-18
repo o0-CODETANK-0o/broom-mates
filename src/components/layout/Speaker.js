@@ -1,5 +1,5 @@
 import React from 'react';
-import Speaker from '../../assets/speaker.jpg';
+import Speaker from '../../assets/sound-on.png';
 
 const speaker = () => {
   return (

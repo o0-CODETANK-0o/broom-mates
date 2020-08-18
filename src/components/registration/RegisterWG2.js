@@ -1,20 +1,24 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
 
-const RegisterWG2 = () => {
+
+const RegisterWG2 = ({jumpToStep}) => {
+
+
   return (
-    <div style={{ height: '100vh', backgroundColor: 'red' }}>
+    <div classNAme="content" >
+
       <h2 className='text'>do you wish to keep -the name?-</h2>
-      <Link to='registerwg3'>
-        <button className='.btn-yellow-bg'>
+     
+
+        <button className='input input-green' onClick={()=>{jumpToStep(2)}}>
           <p className='text'>keep</p>
         </button>
-      </Link>
-      <Link to='createwg'>
-        <button className='.btn-yellow-bg'>
+     
+     
+        <button className="input input-green" onClick={()=>{jumpToStep(0)}}>
           <p className='text'>discard</p>
         </button>
-      </Link>
+    
     </div>
   );
 };
