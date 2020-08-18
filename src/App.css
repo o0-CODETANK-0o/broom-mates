@@ -2,11 +2,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
 }
 
 html {
   font-size: 62.5%;
   color:yellow;
+ 
 }
 
 .App {
