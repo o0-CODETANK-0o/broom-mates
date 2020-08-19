@@ -14,7 +14,7 @@ const RegisterWG = () => {
   ];
 
   return (
-    // <div className='frame'>
+    
       <div className=' border'>
         <div className='header '>
           <h1 className='text'>create wg</h1>
@@ -30,7 +30,7 @@ const RegisterWG = () => {
           <Speaker />
         </div>
       </div>
-    // </div>
+    
   );
 };
 

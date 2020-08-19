@@ -14,18 +14,16 @@ html {
   font-size: 62.5%;
   color: var(--green);
   background-color: var(--purple);
-  
 }
-
 
 .App {
   text-align: center;
 }
 
 .header {
-  margin:2rem 0;
+  margin: 2rem 0;
   height: 10vh;
-  font-size:.8rem;
+  font-size: 0.8rem;
 }
 
 .footer {
@@ -56,8 +54,8 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
-  height: 60vh;
+
+  height: 68vh;
 }
 
 .underline {
@@ -83,16 +81,23 @@ html {
 
 .input {
   border: 2px solid;
-  border-radius: 8px;
-  padding: 0.2rem 1rem;
+  border-radius: 1.2rem;
+  padding: 1rem 1rem;
   margin: 1rem;
   width: 15rem;
 }
 
-.textinput {
-  background: var(--purple);
-  color: var(--green);
+.input-purple:focus {
+  /* background-color: red; */
+  outline-style: none;
+  box-shadow: none;
   border-color: var(--green);
+}
+
+.input-green:focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: var(--purple);
 }
 
 .input-purple {
@@ -105,4 +110,59 @@ html {
   background: var(--green);
   border-color: var(--purple);
   color: var(--purple);
+}
+
+.avatar {
+  margin: 2rem;
+  height: 15rem;
+  width: 15rem;
+  border-radius: 25px;
+}
+
+.carousel {
+  /* height:5rem; */
+  width: 25rem;
+  color: var(--green);
+}
+
+.user-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.user {
+  margin: 1rem;
+}
+
+.details {
+  margin-bottom: 1rem;
+}
+.user-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.userdetail-text {
+  font-size: 2rem;
+}
+.totalpoints {
+  font-size: 3rem;
+}
+.task {
+  display: flex;
+  margin: 1rem;
+}
+
+.unflex{
+  display: block;
+}
+
+.left,.right{
+  display:flex;
+}
+
+.right{
+  flex-direction: row-reverse;
 }
