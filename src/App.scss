@@ -155,14 +155,27 @@ html {
   margin: 1rem;
 }
 
-.unflex{
+.unflex {
   display: block;
 }
 
-.left,.right{
-  display:flex;
+.left,
+.right {
+  display: flex;
 }
 
-.right{
+.right {
   flex-direction: row-reverse;
+}
+
+.adduser-container {
+  .text {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .border {
+    margin: 0;
+  }
 }

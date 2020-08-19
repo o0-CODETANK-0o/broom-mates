@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './assets/broommates-logo.png';
 import { Route, Switch, Link } from 'react-router-dom';
 
-import './App.css';
+import './App.scss';
 
 import Speaker from './components/layout/Speaker';
 import RegisterWG from './components/registration/RegisterWG';
@@ -12,6 +12,7 @@ import Credits from './components/layout/Credits';
 
 // THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES
 import Members from './components/layout/Members';
+import Members2 from './components/layout/Members2';
 import RegisterUser from './components/registration/RegisterUser';
 import UserDetails from './components/layout/UserDetails';
 import ValidateProgress from './components/layout/ValidateProgress';
@@ -67,7 +68,8 @@ function App() {
 
         {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
         <Route exact path='/registeruser' component={RegisterUser} />
-        <Route exact path='/members' component={Members} />
+        <Route exact path='/members4' component={Members} />
+        <Route exact path='/members2' component={Members2} />
         <Route exact path='/userdetails' component={UserDetails} />
         <Route exact path='/validateprogress' component={ValidateProgress} />
         <Route exact path='/inventory' component={Inventory} />
