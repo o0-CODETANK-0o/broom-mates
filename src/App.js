@@ -18,6 +18,7 @@ import UserDetails from './components/layout/UserDetails';
 import ValidateProgress from './components/layout/ValidateProgress';
 import Inventory from './components/layout/Inventory';
 import Shop from './components/layout/Shop';
+import TasksManager from './components/registration/TasksManager';
 // THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES
 
 
@@ -74,6 +75,7 @@ function App() {
         <Route exact path='/validateprogress' component={ValidateProgress} />
         <Route exact path='/inventory' component={Inventory} />
         <Route exact path='/shop' component={Shop} />
+        <Route exact path='/TasksManager' component={TasksManager} />
         {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
 
         <Route exact path='/login' component={Login} />
