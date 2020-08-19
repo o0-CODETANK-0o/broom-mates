@@ -31,7 +31,7 @@ const RegisterUser = () => {
         // className="carousel"
         />
 
-        <Link to="members">
+        <Link to="members4">
           <button className='input input-green'>
             <p className='text'>confirm</p>
           </button>
