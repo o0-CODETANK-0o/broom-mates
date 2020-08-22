@@ -51,6 +51,11 @@ const TasksManager = () => {
         
       const onSubmit = (values) => {
         console.log(values)
+
+        let newArr = Object.entries(values).map(key => Object.entries(key))
+
+        let allTasks = newArr.map(room => Object.values(room)[1]);
+        console.log(allTasks)
       };
       
     
