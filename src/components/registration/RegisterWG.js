@@ -4,14 +4,16 @@ import Speaker from '../layout/Speaker';
 
 import RegisterWG1 from './RegisterWG1';
 import RegisterWG2 from './RegisterWG2';
-import RegisterWG3 from './RegisterWG3';
+import TasksManager from './TasksManager';
 
 const RegisterWG = () => {
   const steps = [
     { name: 'Step 1', component: <RegisterWG1 /> },
     { name: 'Step 2', component: <RegisterWG2 /> },
-    { name: 'Step 3', component: <RegisterWG3 /> },
+    { name: 'Step 3', component: <TasksManager /> },
   ];
+
+
 
   return (
     
