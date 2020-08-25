@@ -5,7 +5,7 @@ import { Formik, Form, Field } from 'formik';
 
 const TasksManager = () => {
 
-    let tasks = {
+    let tasksInitial = {
         kitchen: {
           broomFloor: false,
           mopFloor: false,
@@ -48,20 +48,23 @@ const TasksManager = () => {
           changeCarpet: false
         }
     }
+
+    // let [tasks, setTasks] = useState(tasksInitial) 
+
         
       const onSubmit = (values) => {
-        console.log(values)
+        console.log('values:' + values)
 
         let newArr = Object.entries(values).map(key => Object.entries(key))
-
         let allTasks = newArr.map(room => Object.values(room)[1]);
         console.log(allTasks)
+
       };
       
     
       return (
         <div className="">
-          <Formik initialValues={tasks} onSubmit={onSubmit} >
+          <Formik initialValues={tasksInitial} onSubmit={onSubmit} >
             <Form>
               <div className='header '>
                 <h1 className='text'>select relevant tasks</h1>
