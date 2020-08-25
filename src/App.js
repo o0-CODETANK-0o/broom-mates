@@ -1,50 +1,85 @@
 import React from 'react';
-import logo from './assets/logo.jpg';
+import logo from './assets/broommates-logo.png';
 import { Route, Switch, Link } from 'react-router-dom';
 
-import './App.css';
+import './App.scss';
 
 import Speaker from './components/layout/Speaker';
-import RegisterWG1 from './components/registration/RegisterWG1';
+import RegisterWG from './components/registration/RegisterWG';
+
 import Login from './components/layout/Login';
 import Credits from './components/layout/Credits';
-import RegisterWG2 from './components/registration/RegisterWG2';
+
+// THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES
+import Members from './components/layout/Members';
+import Members2 from './components/layout/Members2';
+import RegisterUser from './components/registration/RegisterUser';
+import UserDetails from './components/layout/UserDetails';
+import ValidateProgress from './components/layout/ValidateProgress';
+import Inventory from './components/layout/Inventory';
+import Shop from './components/layout/Shop';
+import TasksManager from './components/registration/TasksManager';
+// THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES
+
+
 
 function App() {
   return (
     <div className='App'>
       <Switch>
         <Route exact path='/'>
-          <header className='header'>
-            <img src={logo} className='App-logo' alt='logo' />
-          </header>
+          <div className='border'>
+            <header className='header'>
+              <img src={logo} className='App-logo' alt='logo' />
+            </header>
 
-          <div className='content'>
-            <Link to='/registerwg'>
-              <button className='btn-blue-bg'>
-                <p className='text'>create wg</p>
-              </button>
-            </Link>
-            <Link to='/login'>
-              <button className='btn-blue-bg'>
-                <p className='text'>continue</p>
-              </button>
-            </Link>
-            <Link to='/credits'>
-              <button className='btn-blue-bg'>
-                <p className='text'>credits</p>
-              </button>
-            </Link>
+            <div className='content'>
+              <Link to='/registerwg'>
+                <button className='input input-purple '>
+                  <p className='text'>create wg</p>
+                </button>
+              </Link>
 
-            <Speaker className='speaker' />
+              <Link to='/login'>
+                <button className='input input-purple '>
+                  <p className='text'>continue</p>
+                </button>
+              </Link>
+
+              {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
+              <Link to='/registeruser'>
+                <button className='input input-purple '>
+                  <p className='text'>character</p>
+                </button>
+              </Link>
+              {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
+
+              <Link to='/credits'>
+                <button className='input input-purple '>
+                  <p className='text'>credits</p>
+                </button>
+              </Link>
+            </div>
+            <div className='footer'>
+              <Speaker />
+            </div>
           </div>
         </Route>
-        <Route exact path='/registerwg' component={RegisterWG1}/>
-        
-        
+        <Route exact path='/registerwg' component={RegisterWG} />
+
+        {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
+        <Route exact path='/registeruser' component={RegisterUser} />
+        <Route exact path='/members4' component={Members} />
+        <Route exact path='/members2' component={Members2} />
+        <Route exact path='/userdetails' component={UserDetails} />
+        <Route exact path='/validateprogress' component={ValidateProgress} />
+        <Route exact path='/inventory' component={Inventory} />
+        <Route exact path='/shop' component={Shop} />
+        <Route exact path='/TasksManager' component={TasksManager} />
+        {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
+
         <Route exact path='/login' component={Login} />
         <Route exact path='/credits' component={Credits} />
-        {/* <Route exact path='/registerwg2' component={RegisterWG2} /> */}
       </Switch>
     </div>
   );
