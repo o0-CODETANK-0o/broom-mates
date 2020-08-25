@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Speaker from '../components/layout/Speaker';
-import logo from '../assets/broommates-logo.png';
+import logo from '../assets/logos-and-icons/broommates-logo.png';
 
 function Home() {
     return (
