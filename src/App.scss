@@ -1,0 +1,181 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+}
+
+:root {
+  --purple: #4d036e;
+  --green: #41ff00;
+}
+
+html {
+  font-size: 62.5%;
+  color: var(--green);
+  background-color: var(--purple);
+}
+
+.App {
+  text-align: center;
+}
+
+.header {
+  margin: 2rem 0;
+  height: 10vh;
+  font-size: 0.8rem;
+}
+
+.footer {
+  /* background: red; */
+  height: 5vh;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.sound-icon {
+  background-color: var(--purple);
+  background-position: center;
+  background-size: cover;
+  height: 2rem;
+  width: 2rem;
+  /* position: fixed;
+  bottom: 2rem;
+  left: 1rem; */
+  border: none;
+  box-shadow: none;
+}
+
+.content {
+  /* background:yellow; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 68vh;
+}
+
+.underline {
+  background: var(--green);
+  padding: 0.1rem;
+  margin: 0.3rem 1rem;
+}
+
+.text {
+  text-transform: uppercase;
+}
+
+.border {
+  border: var(--green) solid 0.2rem;
+  max-height: 100vh;
+  border-radius: 0.9rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+.frame {
+  background: var(--purple);
+}
+
+.input {
+  border: 2px solid;
+  border-radius: 1.2rem;
+  padding: 1rem 1rem;
+  margin: 1rem;
+  width: 15rem;
+}
+
+.input-purple:focus {
+  /* background-color: red; */
+  outline-style: none;
+  box-shadow: none;
+  border-color: var(--green);
+}
+
+.input-green:focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: var(--purple);
+}
+
+.input-purple {
+  background: var(--purple);
+  color: var(--green);
+  border-color: var(--green);
+}
+
+.input-green {
+  background: var(--green);
+  border-color: var(--purple);
+  color: var(--purple);
+}
+
+.avatar {
+  margin: 2rem;
+  height: 15rem;
+  width: 15rem;
+  border-radius: 25px;
+}
+
+.carousel {
+  /* height:5rem; */
+  width: 25rem;
+  color: var(--green);
+}
+
+.user-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.user {
+  margin: 1rem;
+}
+
+.details {
+  margin-bottom: 1rem;
+}
+.user-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.userdetail-text {
+  font-size: 2rem;
+}
+.totalpoints {
+  font-size: 3rem;
+}
+.task {
+  display: flex;
+  margin: 1rem;
+}
+
+.unflex {
+  display: block;
+}
+
+.left,
+.right {
+  display: flex;
+}
+
+.right {
+  flex-direction: row-reverse;
+}
+
+.adduser-container {
+  .text {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .border {
+    margin: 0;
+  }
+}

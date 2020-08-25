@@ -1,3 +1,4 @@
 {
-   export const CREATE_WG="CREATE_WG";
+   export const SHOW_REGISTER1="SHOW_REGISTER1";
+   export const SHOW_REGISTER2="SHOW_REGISTER2";
 }
