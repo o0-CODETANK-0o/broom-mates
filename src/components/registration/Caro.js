@@ -15,11 +15,11 @@ const caro = (props) => {
   let avatars = [];
 
   switch(props.avatar) {
-    case "female":
+    case "bots":
       avatars.push(babyGirl, laverne, lea, sammy)
       break;
-    case "male":
-      avatars.push(babyMale, lemmy, spencer, squeegie)
+    case "human":
+      avatars.push(babyMale, babyGirl, lemmy, laverne, spencer, lea, squeegie, sammy)
       break;
     default:
       break;
@@ -34,11 +34,9 @@ const caro = (props) => {
   return (
 
     <div>
-      {/* {SimpleSlider()} */}
-      <Slider avatars={avatars} className="carousel" dots={true} arrows={false}>
+      <Slider avatars={avatars} className="carousel" dots={false} arrows={true}>
           {avatarjsx}
       </Slider>
-
     </div>
 
   );

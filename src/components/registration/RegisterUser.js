@@ -6,13 +6,17 @@ import { Link } from 'react-router-dom';
 
 const RegisterUser = () => {
 
-  let [avatar, setAvatar] = useState("male");
+  let [avatar, setAvatar] = useState("human");
 
   return (
-    <div className=' border'>
-      <div className='header '>
-        <h1 className='text'>character creation</h1>
-        <div className='underline'></div>
+    <div className='border'>
+      <div className='header'>
+        <h1 className='text'>character</h1>
+        <h1 className='text'>creation</h1>
+        <div>
+          <div className='underline'></div>
+          <div className='underline'></div>
+        </div>
       </div>
 
       <div className='content '>
@@ -20,9 +24,8 @@ const RegisterUser = () => {
         <input type='text' className='input input-green text' />
         <h2 className='text'>type</h2>
         <select onChange={(e) => setAvatar(e.target.value) } type='select' className='input input-green text '>
-          <option value='male'>male</option>
-          <option value='female'>female</option>
-          <option value='broom'>drag</option>
+          <option value='human'>human</option>
+          <option value='drag'>drag</option>
           <option value='bots'>bots</option>
         </select>
 
@@ -32,7 +35,12 @@ const RegisterUser = () => {
 
         <Link to="members4">
           <button className='input input-green'>
-            <p className='text'>confirm</p>
+            <p className='text'>create</p>
+          </button>
+        </Link>
+        <Link to="registeruser">
+          <button className='input input-green'>
+            <p className='text'>clear</p>
           </button>
         </Link>
    
