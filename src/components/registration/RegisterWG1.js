@@ -12,10 +12,9 @@ const RegisterWG = (props) => {
     email:''
   }
 
-  const onSubmit = (values, submitProps) => {
-    console.log('Submit done: ', values)
-    submitProps.setState(initialValues)
-
+  const onSubmit = (values) => {
+    console.log('Submit done: ', initialValues)
+    jumpToStep(values);
   }
 
 
@@ -40,7 +39,7 @@ const RegisterWG = (props) => {
             </div>
 
             <button
-              type='submit'
+              type='button'
               className=' input input-green'
               onClick={() => {
                 jumpToStep(1);
@@ -58,7 +57,7 @@ const RegisterWG = (props) => {
               <p className='text'>Back</p>
             </button>
           </div>
-      </Form>
+        </Form>
       </Formik>
     </div>
   );
