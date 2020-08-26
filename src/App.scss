@@ -20,6 +20,10 @@ html {
   text-align: center;
 }
 
+.broom-mates-logo {
+  width: 100%;
+}
+
 .header {
   margin: 2rem 0;
   height: 10vh;
@@ -49,13 +53,12 @@ html {
 }
 
 .content {
-  /* background:yellow; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  height: 68vh;
+  height: 66vh;
 }
 
 .underline {
@@ -69,9 +72,9 @@ html {
 }
 
 .border {
-  border: var(--green) solid 0.2rem;
+  border: var(--green) solid 0.5rem;
   max-height: 100vh;
-  border-radius: 0.9rem;
+  border-radius: 20px;
   margin: 1rem;
   padding: 1rem;
 }
@@ -116,6 +119,7 @@ html {
   margin: 2rem;
   height: 15rem;
   width: 15rem;
+  border: 5px solid var(--green);
   border-radius: 25px;
 }
 
