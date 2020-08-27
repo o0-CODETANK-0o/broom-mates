@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Speaker from '../layout/Speaker';
 import skater from '../../assets/skater.png';
-import { Link } from 'react-router-dom';
-const Members = () => {
+import { Link, useLocation, withRouter } from 'react-router-dom';
+
+const Members = (props) => {
+
+  console.log('props', props);
+
+  let location = useLocation();
+
+  useEffect(() => {
+    console.log(location)
+  }, [location]); 
+
   return (
     <div className=' border'>
       <div className='header '>
@@ -53,4 +63,5 @@ const Members = () => {
   );
 };
 
-export default Members;
+
+export default withRouter(Members);
