@@ -11,8 +11,10 @@ const RegisterUser = () => {
   return (
     <div className='border'>
       <div className='header'>
-        <h1 className='text'>character</h1>
-        <h1 className='text'>creation</h1>
+        <div className='header-register-user'>
+          <h1 className='text'>character</h1>
+          <h1 className='text'>creation</h1>
+        </div>
         <div>
           <div className='underline'></div>
           <div className='underline'></div>

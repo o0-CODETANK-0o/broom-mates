@@ -8,6 +8,7 @@
 :root {
   --purple: #4d036e;
   --green: #41ff00;
+  --yellow: #FFFF00;
 }
 
 html {
@@ -27,6 +28,14 @@ html {
 .header {
   margin: 2rem 0;
   height: 10vh;
+}
+
+.header-register-user {
+  margin-bottom: 2rem;
+  color: var(--yellow);
+  h1 {
+    margin-bottom: 5px;
+  }
 }
 
 .footer {
@@ -55,7 +64,6 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   height: 66vh;
 }
 

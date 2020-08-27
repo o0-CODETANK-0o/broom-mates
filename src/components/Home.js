@@ -8,7 +8,7 @@ function Home() {
         <div className='border'>
 
             <header className='header'>
-            <img src={logo} className='broom-mates-logo' alt='logo' />
+                <img src={logo} className='broom-mates-logo' alt='logo' />
             </header>
 
             <div className='content'>
@@ -36,6 +36,7 @@ function Home() {
                     </button>
                 </Link>
             </div>
+            
             <div className='footer'>
                 <Speaker />
             </div>
