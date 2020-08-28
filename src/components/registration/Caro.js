@@ -10,11 +10,11 @@ import lea from '../../assets/female-portraits/lea.png';
 import sammy from '../../assets/female-portraits/sammy.png';
 
 
-const caro = (props) => {
+const caro = ({avatar}) => {
   
   let avatars = [];
 
-  switch(props.avatar) {
+  switch(avatars) {
     case "bots":
       avatars.push(babyGirl, laverne, lea, sammy)
       break;
@@ -26,8 +26,8 @@ const caro = (props) => {
   }
 
   let avatarjsx = avatars.map(avatar => (
-    <div key={avatar}>
-    <img src={avatar} alt='avatar picture' className='avatar' />
+    <div key={avatars}>
+    <img src={avatars} alt='avatar picture' className='avatar' />
   </div>
   ))
 

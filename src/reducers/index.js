@@ -1,10 +1,22 @@
 import { combineReducers } from 'redux';
 
-import registerUserReducer  from './registerUserReducer'; 
+import registerUserNameReducer  from "./registerUserNameReducer"; 
+import registerUserGenderReducer  from "./registerUserGenderReducer"; 
+
+
+// const InitialState={
+// name:registerUserNameReducer.name,
+// gender:registerUserGenderReducer.gender
+
+
+// }
+
+
 
  const rootReducer=combineReducers(
      {
-         registerUserReducer
+        registerUserNameReducer,
+        registerUserGenderReducer
         }
         );
 
