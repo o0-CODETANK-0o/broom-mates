@@ -1,44 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Speaker from '../layout/Speaker';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Caro from './Caro';
-import { Link, useHistory } from 'react-router-dom';
 
-class RegisterUser extends React.Component {
 
-  constructor(props) {
-    super(props);
+const RegisterUser =() => {
+const userName=useSelector(state=>state.registerUserReducer.userName)
+  const dispatch=useDispatch()
 
-    this.state = {
-      avatar: "human"
-    }
 
-  }
-    // let history = useHistory();
-    // let [avatar, setAvatar] = useState("human");
-      handleSubmit = (e) => {
-      e.preventDefault();
-      // store form data in redux
-      // re-direct to next step
-      // this.history.push({
-      //   pathname: '/members4',
-      //   state: { message: 'nicolo'}
-      // }, 
-      // {island: 'Mauritius Islands'}
-      // )
 
-      this.props.history.push("/members4", { response: 'hello WORLD!' })  
 
-    };
-  
 
-  render() {
 
     return (
       <div className='border'>
         <div className='header'>
           <div className='header-register-user'>
-            <h1 className='text'>character</h1>
+           u <h1 className='text'>character</h1>
             <h1 className='text'>creation</h1>
           </div>
           <div>
@@ -48,30 +28,28 @@ class RegisterUser extends React.Component {
         </div>
   
         <div className='content '>
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <h2 className='text'>name</h2>
-            <input type='text' className='input input-green text' />
+            <input type='text' className='input input-green text' onChange={onChange} />
             <h2 className='text'>type</h2>
-            <select onChange={ (e) => this.setState({avatar: e.target.value}) } type='select' className='input input-green text '>
+            {/* <select onChange={ (e) => setAvatar(e.target.value) } type='select' className='input input-green text '> */}
+            <select type='select' className='input input-green text '>
+
               <option value='human'>human</option>
               <option value='drag'>drag</option>
               <option value='bots'>bots</option>
             </select>
   
-            <Caro avatar={this.state.avatar}
+            <Caro avatar={avatar}
             // className="carousel"
             />
   
-            <Link to="members4">
               <button className='input input-green'>
                 <p className='text'>create</p>
               </button>
-            </Link>
-            <Link to="registeruser">
               <button className='input input-green'>
                 <p className='text'>clear</p>
               </button>
-            </Link>
           </form>
         </div>
   
@@ -80,7 +58,7 @@ class RegisterUser extends React.Component {
         </div>
       </div>
     );
-  }
+  
 }
 
 
