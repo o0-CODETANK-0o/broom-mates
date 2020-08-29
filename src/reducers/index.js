@@ -1,8 +1,22 @@
 import { combineReducers } from 'redux';
 
-import * as reducers from './';
 
+const flatReducer = (emptyWg, action) => {
+    return [
+        {name:'', email:''}
+    ];
+};
 
- combineReducers(reducers);
+const selectedFlatReducer = (selectedFlat=null, action) => {
+    if(action.type === 'CREATE_WG') {
+        return action.payload;
+    }
+    return selectedFlatReducer
+};
 
-export default combineReducers;
+export default combineReducers({
+     newFlat: flatReducer,
+     selectedNewFlat: selectedFlatReducer
+ });
+
+ 

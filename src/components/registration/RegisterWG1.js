@@ -2,8 +2,7 @@ import React from 'react';
 // import useDispatch from 'react-redux'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import loginSchema from './validation_rules';
-import CreateWG from '../../actions';
-
+import { CreateWG } from '../../actions'
 
 const RegisterWG = (props) => {
   const jumpToStep = (step) => {

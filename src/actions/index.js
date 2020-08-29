@@ -1,9 +1,9 @@
-// import * as actions from "./action-types";
-// import Redux from 'redux';
 
-const CreateWG = (wg)=>{
+
+export const CreateWG = (name, email)=>{
    return{
       type: 'CREATE_WG',
-      payload: wg
-   }
+      payload: { name, email }
+   };
 };
+
