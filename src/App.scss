@@ -121,19 +121,9 @@ html {
   color: var(--purple);
 }
 
-.avatar {
-  margin: 2rem;
-  height: 15rem;
-  width: 15rem;
-  border: 5px solid var(--green);
-  border-radius: 25px;
-}
 
-.carousel {
-  /* height:5rem; */
-  width: 25rem;
-  color: var(--green);
-}
+
+
 
 .user-gallery {
   display: flex;
@@ -188,4 +178,20 @@ html {
   .border {
     margin: 0;
   }
+}
+
+.carousel {
+  /* height:5rem; */
+  width:18rem;
+  color: var(--green);
+  margin:0 auto;
+  // border:green 1px solid;
+  .avatar {
+    margin: 2rem auto;
+    height: 15rem;
+    width: 15rem;
+    border: 5px solid var(--green);
+    border-radius: 25px;
+  }
+  .avatar:hover{cursor: pointer;}
 }

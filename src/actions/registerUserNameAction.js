@@ -2,8 +2,7 @@
 
 const registerUserNameAction = (payload) => {
 
-  console.log("Action NAME called")
-    return {
+      return {
       
       type: 'REGISTER_USER_NAME',
       payload:payload,

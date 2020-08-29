@@ -2,8 +2,9 @@ import React from 'react';
 import Speaker from '../layout/Speaker';
 
 
-import Caro from './Caro';
-import { useSelector, useDispatch } from 'react-redux';
+
+import Caro from "./Caro"
+import { useSelector,useDispatch } from 'react-redux';
 import registerUserNameAction from "../../actions/registerUserNameAction"
 import registerUserGenderAction from "../../actions/registerUserGenderAction"
 
@@ -11,26 +12,36 @@ import registerUserGenderAction from "../../actions/registerUserGenderAction"
 
 const RegisterUser =() => {
 
-const userName=useSelector((state)=>state.registerUserNameReducer.name)
-console.log(userName)
+// const userName=useSelector((state)=>state.registerUserNameReducer.name)
+// console.log(userName)
 const userGender=useSelector((state)=>state.registerUserGenderReducer.gender)
 console.log(userGender)
+
+const state=useSelector((state)=>state)
+console.log(state)
   const dispatch=useDispatch()
+ 
 
 let newGender
 let newName
 const onChange=(e)=>{
 e.preventDefault()
-e.target.name==="name"? newName=e.target.value:newGender=e.target.value
-
+// e.target.name==="name"? newName=e.target.value:pickGender(e);
+newName=e.target.value
 }
+
+const pickGender=(e)=>{
+  newGender=e.target.value
+  dispatch(registerUserGenderAction(newGender))
+}
+
 
 const onSubmit=(e,onChange)=>{
   e.preventDefault()
-// console.log(newName)
-// console.log(newGender)
+
   dispatch(registerUserNameAction(newName))
-  dispatch(registerUserGenderAction(newGender))
+
+  
 }
 
 
@@ -58,18 +69,15 @@ return (
         <h2 className='text'>name</h2>
         <input type='text' name="name" className='input input-green text' onChange={onChange} />
         <h2 className='text'>type</h2>
-        {/* <select onChange={ (e) => setAvatar(e.target.value) } type='select' className='input input-green text '></select> */}
-        <select type='select' name="gender" className='input input-green text '  onChange={onChange}>
+               <select type='select' name="gender"  className='input input-green text '   onChange={pickGender} >
 
           
-          <option value='human'>human</option>
+          <option value='human' >human</option>
           <option value='drag'>drag</option>
           <option value='bots'>bots</option>
         </select>
 
-        {/* <Caro avatar={avatars}
-        // className="carousel"
-        /> */}
+        <Caro />
 
           <button type="submit" className='input input-green' onClick={onSubmit}>
             <p className='text'>create</p>
