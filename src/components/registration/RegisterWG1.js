@@ -1,6 +1,9 @@
 import React from 'react';
+// import useDispatch from 'react-redux'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import loginSchema from './validation_rules';
+import CreateWG from '../../actions';
+
 
 const RegisterWG = (props) => {
   const jumpToStep = (step) => {
@@ -11,10 +14,12 @@ const RegisterWG = (props) => {
     wgName:'',
     email:''
   }
+  // const dispatch = useDispatch()
 
   const onSubmit = (values) => {
-    console.log('Submit done: ', initialValues)
-    jumpToStep(values);
+    console.log(values)
+    // dispatch(CreateWG(values))
+    // jumpToStep(values);
   }
 
 
@@ -41,9 +46,9 @@ const RegisterWG = (props) => {
             <button
               type='button'
               className=' input input-green'
-              onClick={() => {
-                jumpToStep(1);
-              }}
+              // onClick={() => {
+              //   jumpToStep(1);
+              // }}
             >
               <p className='text'>create wg</p>
             </button>
