@@ -1,10 +1,13 @@
 import React from 'react';
-// import useDispatch from 'react-redux'
+// import useDispatch from 'react-redux';
+// import { Provider } from 'react-redux';
+// import {createStore } from 'redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import loginSchema from './validation_rules';
-import { CreateWG } from '../../actions'
+import { connect } from 'react-redux';
 
 const RegisterWG = (props) => {
+
   const jumpToStep = (step) => {
     return props.jumpToStep(step);
   };
@@ -16,9 +19,8 @@ const RegisterWG = (props) => {
   // const dispatch = useDispatch()
 
   const onSubmit = (values) => {
-    console.log(values)
     // dispatch(CreateWG(values))
-    // jumpToStep(values);
+    jumpToStep(values);
   }
 
 
@@ -45,9 +47,9 @@ const RegisterWG = (props) => {
             <button
               type='button'
               className=' input input-green'
-              // onClick={() => {
-              //   jumpToStep(1);
-              // }}
+              onClick={() => {
+                jumpToStep(1);
+              }}
             >
               <p className='text'>create wg</p>
             </button>
@@ -67,4 +69,9 @@ const RegisterWG = (props) => {
   );
 };
 
-export default RegisterWG;
+const mapStateToProps = (state) => {
+
+  return { wgName: state.name, email: state.email };
+};
+
+export default connect(mapStateToProps)(RegisterWG);
