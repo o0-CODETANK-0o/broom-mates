@@ -5,7 +5,7 @@ const RegisterWG2 = ({jumpToStep}) => {
 
 
   return (
-    <div classNAme="content" >
+    <div className="content" >
 
       <h2 className='text'>do you wish to keep -the name?-</h2>
      

@@ -2,6 +2,7 @@ import React from 'react';
 import Speaker from '../layout/Speaker';
 import skater from '../../assets/skater.png';
 import { Link } from 'react-router-dom';
+
 const UserDetails = () => {
   return (
     <div className=' border'>
