@@ -1,39 +1,69 @@
 import React from 'react';
-import StepZilla from 'react-stepzilla';
-import Speaker from '../layout/Speaker';
-
+import { Field, reduxForm } from 'redux-form';
 import RegisterWG1 from './RegisterWG1';
 import RegisterWG2 from './RegisterWG2';
 import TasksManager from './TasksManager';
 
-const RegisterWG = () => {
-  const steps = [
-    { name: 'Step 1', component: <RegisterWG1 /> },
-    { name: 'Step 2', component: <RegisterWG2 /> },
-    { name: 'Step 3', component: <TasksManager /> },
-  ];
 
 
+class RegisterWG extends React.Component {
 
-  return (
-    
-      <div className=' border'>
-        <div className='header '>
-          <h1 className='text'>create wg</h1>
-          <div className='underline'></div>
-          <div className='underline'></div>
+  renderError({ error, touched}) {
+    if(touched && error ) {
+      return (
+        <div>
+          <div>{error}</div>
         </div>
+      );
+    }
+  }
+  
+  renderInput = ({input, label, meta}) => {
+    return (
+    <div className="content">
+      <label>{label}</label>
+      <input className="input" {...input} autoComplete="off"/>
+      {this.renderError(meta)}
+    </div>
+    )
+  }
 
-        <div className='step-progress content '>
-          <StepZilla steps={steps} showNavigation={false} showSteps={false} />
-        </div>
+  onSubmit(formValues) {
+    console.log(formValues)
+  }
 
-        <div className='footer'>
-          <Speaker />
-        </div>
+  render() {
+    return (
+      <div>
+        <h2>Create WG</h2>
+          <form onSubmit={this.props.handleSubmit(this.onSubmit)} >
+            <Field name="houseName" component={this.renderInput} label="Name of the WG"/>
+            <Field name="email" type="email"  validate={email} component={this.renderInput} label="email of the wg"/>
+            <button>Submit</button>
+          </form>
       </div>
-    
   );
+
+  }
+}
+const email = value =>
+value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
+'Invalid email address' : undefined
+
+const validate = (formValues) => {
+  const errors= {};
+  
+  if(!formValues.houseName) {
+    errors.houseName = "Your quest starts with a house name!"
+  }
+  if(!formValues.email) {
+    errors.email = "An email is necessary for your adventure";
+    formValues = email
+  }
+  return errors;
 };
 
-export default RegisterWG;
+export default reduxForm({
+  form: 'createWG',
+  validate
+})(RegisterWG);

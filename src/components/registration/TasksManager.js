@@ -1,9 +1,10 @@
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import React from 'react'
+import { Field, reduxForm } from 'redux-form'
+const  { DOM: { input, select, textarea } } = React
 
+const TasksManager = (props) => {
 
-
-const TasksManager = () => {
+  const { handleSubmit, pristine, reset, submitting } = props
 
     let tasks = {
         kitchen: {
@@ -49,15 +50,10 @@ const TasksManager = () => {
         }
     }
         
-      const onSubmit = (values) => {
-        console.log(values)
-      };
-      
     
       return (
-        <div className="">
-          <Formik initialValues={tasks} onSubmit={onSubmit} >
-            <Form>
+        <form onSubmit={handleSubmit}>
+        
               <div className='header '>
                 <h1 className='text'>select relevant tasks</h1>
                 <div className='underline'></div>
@@ -251,11 +247,10 @@ const TasksManager = () => {
                     </div> 
     
     
-                  <button className='btn-yellow-bg' type="submit">Submit</button>
                 </div>
-              </Form>
-            </Formik>
-        </div>
+                <button className='btn-yellow-bg' type="submit">Submit</button>
+
+        </form>
       );    
 };
 
