@@ -1,81 +1,80 @@
 import React from 'react';
-import Slider from 'infinite-react-carousel';
-import babyMale from '../../assets/male-portraits/baby.png';
-import lemmy from '../../assets/male-portraits/lemmy.png';
-import spencer from '../../assets/male-portraits/spencer.png';
-import squeegie from '../../assets/male-portraits/squeegie.png';
-import babyGirl from '../../assets/female-portraits/babygirl.png';
-import laverne from '../../assets/female-portraits/laverne.png';
-import lea from '../../assets/female-portraits/lea.png';
-import sammy from '../../assets/female-portraits/sammy.png';
-import skater from '../../assets/skater.png';
-import{useSelector,useDispatch} from "react-redux";
-import registerUserGenderAction from "../../actions/registerUserGenderAction"
 
-
-
-
+import { useSelector, useDispatch } from 'react-redux';
+import { xAction } from '../../actions/xAction';
+import { avatarAction } from '../../actions/avatarAction';
 
 const Caro = () => {
 
+  const dispatch = useDispatch();
 
-  const currentGender=useSelector(state=>state.registerUserGenderReducer.gender);
-console.log(currentGender)
-const dispatch = useDispatch()
-
-
-
-    let avatars = [];
-
-  switch(currentGender) {
-    case "bots":
-      avatars.push(babyGirl, laverne, lea, sammy)
-      break;
-    case "human":
-      avatars.push(babyMale, babyGirl, lemmy, laverne, spencer, lea, squeegie, sammy)
-      break;
-    default:avatars.push(babyMale, babyGirl, lemmy, laverne, spencer, lea, squeegie, sammy)
-      break;
-
-  }
-
-  const afterChange=(avatar)=>{
-    
-    console.log(avatar)
-    // dispatch(registerUserGenderAction(avatars.indexOf(avatar)))
-  }
+  const counter = useSelector(
+    (state) => state.avatarReducer.counter
+  );
 
 
 
-  let avatarjsx = avatars.map(avatar => (
-    <div key={avatars.indexOf(avatar)} className="hello" >
-     {/* {afterChange(avatar)} */}
-     <img src={avatar} alt='avatar picture' className='avatar'  />
-  </div>
-  ))
+  const items = useSelector((state) => {
+    console.log(state);
+    return state.genderReducer[
+      state.genderReducer.currentGender
+    ];
+  });
+
+ 
 
 
+  let x = useSelector((state) => state.xreducer.x);
 
+  const goLeft = () => {
+    x === 0
+      ? dispatch(xAction(-100 * (items.length - 1)))
+      : dispatch(xAction(x + 100));
+    callavatarLeft();
+  };
 
+  const callavatarLeft = () => {
+    counter === 0
+      ? dispatch(avatarAction(items.length - 1, items))
+      : dispatch(avatarAction(counter - 1, items));
+  };
 
+  const callavatarRight = () => {
+    counter === items.length - 1
+      ? dispatch(avatarAction(0, items))
+      : dispatch(avatarAction(counter + 1, items));
+  };
+  const goRight = () => {
+    x === -100 * (items.length - 1)
+      ? dispatch(xAction(0))
+      : dispatch(xAction(x - 100));
+    callavatarRight();
+  };
 
+  let carouselJSX = items.map((avatar, index) => (
+    <img
+    alt="avatar"
+      src={avatar}
+      className="avatar"
+      key={index}
+      style={{ transform: `translateX(${x}%)` }}
+    />
+  ));
 
-  
-      const SimpleSlider = () => (
-          <Slider className="carousel" dots={true} arrows={false} wheel={true} onSwipe={(right)=>{afterChange()}}>
-           
-            {avatarjsx}
-           
-          </Slider>
-        );
-  
-    return (
-  
-  
-      <div>
-        {SimpleSlider()}
-      </div>
-    );
-  }
-  
-  export default Caro;
+  return (
+    <>
+      <button className="goLeft direction" onClick={goLeft}>
+        left
+      </button>
+      <div className="carousel">{carouselJSX}</div>
+      <button
+        className="goright direction"
+        onClick={goRight}
+      >
+        right
+      </button>
+    </>
+  );
+};
+
+export default Caro;

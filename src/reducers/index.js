@@ -1,23 +1,23 @@
 import { combineReducers } from 'redux';
 
-import registerUserNameReducer  from "./registerUserNameReducer"; 
-import registerUserGenderReducer  from "./registerUserGenderReducer"; 
+// import registerUserNameReducer from './registerUserNameReducer';
+import xreducer from './xreducer';
+import avatarReducer from './avatarReducer';
 
-
-// const InitialState={
-// name:registerUserNameReducer.name,
-// gender:registerUserGenderReducer.gender
-
-
-// }
+import genderReducer from './genderReducer';
 
 
 
- const rootReducer=combineReducers(
-     {
-        registerUserNameReducer,
-        registerUserGenderReducer
-        }
-        );
+
+
+
+
+
+const rootReducer = combineReducers({
+  // registerUserNameReducer,
+  genderReducer,
+  avatarReducer,
+  xreducer,
+});
 
 export default rootReducer;

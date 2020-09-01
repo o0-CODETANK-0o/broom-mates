@@ -1,27 +1,13 @@
 
-import action from '../actions/registerUserNameAction';
-// import initialState from "../reducers"
 
-
-
-
-
-const registerUserNameReducer = (state={name:""},action) => {
+const registerUserNameReducer = (state = { name: '' }, action) => {
   switch (action.type) {
-    
-        case"REGISTER_USER_NAME":
-        
-        return {...state,name:action.payload}
+    case 'REGISTER_USER_NAME':
+      return { ...state, name: action.payload };
 
-       
-
-
-     ;
-
-      default:return state;
+    default:
+      return state;
   }
 };
 
-
-
-export default registerUserNameReducer
+export default registerUserNameReducer;
