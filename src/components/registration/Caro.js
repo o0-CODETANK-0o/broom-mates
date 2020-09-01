@@ -5,14 +5,11 @@ import { xAction } from '../../actions/xAction';
 import { avatarAction } from '../../actions/avatarAction';
 
 const Caro = () => {
-
   const dispatch = useDispatch();
 
   const counter = useSelector(
     (state) => state.avatarReducer.counter
   );
-
-
 
   const items = useSelector((state) => {
     console.log(state);
@@ -21,13 +18,14 @@ const Caro = () => {
     ];
   });
 
- 
-
-
   let x = useSelector((state) => state.xreducer.x);
 
   const goLeft = (e) => {
+<<<<<<< HEAD
     e.preventDefault()
+=======
+    e.preventDefault();
+>>>>>>> fdfb52e773ba0baded21b20b304656cef58efe60
     x === 0
       ? dispatch(xAction(-100 * (items.length - 1)))
       : dispatch(xAction(x + 100));
@@ -55,7 +53,7 @@ const Caro = () => {
 
   let carouselJSX = items.map((avatar, index) => (
     <img
-    alt="avatar"
+      alt="avatar"
       src={avatar}
       className="avatar"
       key={index}
