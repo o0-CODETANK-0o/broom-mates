@@ -26,7 +26,8 @@ const Caro = () => {
 
   let x = useSelector((state) => state.xreducer.x);
 
-  const goLeft = () => {
+  const goLeft = (e) => {
+    e.preventDefault()
     x === 0
       ? dispatch(xAction(-100 * (items.length - 1)))
       : dispatch(xAction(x + 100));
@@ -44,7 +45,8 @@ const Caro = () => {
       ? dispatch(avatarAction(0, items))
       : dispatch(avatarAction(counter + 1, items));
   };
-  const goRight = () => {
+  const goRight = (e) => {
+    e.preventDefault()
     x === -100 * (items.length - 1)
       ? dispatch(xAction(0))
       : dispatch(xAction(x - 100));
