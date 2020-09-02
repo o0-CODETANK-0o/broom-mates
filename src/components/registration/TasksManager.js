@@ -70,8 +70,8 @@ const TasksManager = (props) => {
       </div>
 
       <div>
-      <button type="button" className="previous" onClick={previousPage}>Previous</button>
-      <button type="submit" onSubmit={pristine || submitting}>Submit</button>        
+      <button type="button" className="input" onClick={previousPage}>Previous</button>
+      <button type="submit" className="input" onSubmit={pristine || submitting}>Submit</button>        
       </div>
     </form>
   )
