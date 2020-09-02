@@ -29,7 +29,8 @@ class RegisterWG extends React.Component {
   }
 
   onSubmit(formValues) {
-    console.log(formValues)
+    console.log(formValues);
+    let houseValues = formValues;
   }
 
   render() {

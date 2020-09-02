@@ -1,10 +1,11 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
-const  { DOM: { input, select, textarea } } = React
+import { Field, reduxForm } from 'redux-form';
+
+// const  { DOM: { input, select, textarea } } = React
 
 const TasksManager = (props) => {
 
-  const { handleSubmit, pristine, reset, submitting } = props
+  const { handleSubmit, submitting } = props
 
     let tasks = {
         kitchen: {

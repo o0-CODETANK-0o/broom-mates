@@ -1,32 +1,27 @@
-import React from 'react';
+import React from 'react'
+import { Field, reduxForm } from 'redux-form'
+// import { render } from 'node-sass';
 
 
-const RegisterWG2 = ({jumpToStep}) => {
+const tasksManager = (props) => {
+  const handleSubmit = props
 
+ 
+   
 
-  return (
-    <div className="content" >
+  
+    return (
+      <form onSubmit={this.handleSubmit}>
+          <div>
+            <Field name="broom the kitchen" id="broomKitchen" component={this.renderInput} type="checkbox"/>
+          </div>
+          
+        <button>Submit</button>
+      </form>
+    )  
 
-        <h2 className='text'>wg name</h2>
-        <input className=' input input-purple text'></input>
-        <h2 className='text'>email</h2>
-        <input type='email' className=' input input-purple text '></input>
+}
 
-
-      <h2 className='text'>do you wish to confirm?</h2>
-     
-
-        <button className='input input-green' onClick={()=>{jumpToStep(2)}}>
-          <p className='text'>yes</p>
-        </button>
-     
-     
-        <button className="input input-green" onClick={()=>{jumpToStep(0)}}>
-          <p className='text'>no</p>
-        </button>
-    
-    </div>
-  );
-};
-
-export default RegisterWG2;
+export default reduxForm({
+  form: 'tasksManager'  
+})(tasksManager)
