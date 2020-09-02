@@ -1,70 +1,37 @@
-import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import React, { Component, PropTypes } from 'react';
 import RegisterWG1 from './RegisterWG1';
-import RegisterWG2 from './RegisterWG2';
 import TasksManager from './TasksManager';
 
-
-
-class RegisterWG extends React.Component {
-
-  renderError({ error, touched}) {
-    if(touched && error ) {
-      return (
-        <div>
-          <div>{error}</div>
-        </div>
-      );
+class RegisterWG extends Component {
+  constructor(props) {
+    super(props)
+    this.nextPage = this.nextPage.bind(this)
+    this.previousPage = this.previousPage.bind(this)
+    this.state = {
+      page: 1
     }
   }
-  
-  renderInput = ({input, label, meta}) => {
-    return (
-    <div className="content">
-      <label>{label}</label>
-      <input className="input" {...input} autoComplete="off"/>
-      {this.renderError(meta)}
-    </div>
-    )
+  nextPage() {
+    this.setState({ page: this.state.page + 1 })
   }
 
-  onSubmit(formValues) {
-    console.log(formValues);
-    let houseValues = formValues;
+  previousPage() {
+    this.setState({ page: this.state.page - 1 })
   }
 
   render() {
-    return (
-      <div>
-        <h2>Create WG</h2>
-          <form onSubmit={this.props.handleSubmit(this.onSubmit)} >
-            <Field name="houseName" component={this.renderInput} label="Name of the WG"/>
-            <Field name="email" type="email"  validate={email} component={this.renderInput} label="email of the wg"/>
-            <button>Submit</button>
-          </form>
+    const { onSubmit } = this.props
+    const { page } = this.state
+    return (<div>
+        {page === 1 && <RegisterWG1 onSubmit={this.nextPage}/>}
+        {page === 2 && <TasksManager previousPage={this.previousPage} onSubmit={onSubmit}/>}
       </div>
-  );
-
+    )
   }
 }
-const email = value =>
-value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
-'Invalid email address' : undefined
 
-const validate = (formValues) => {
-  const errors= {};
-  
-  if(!formValues.houseName) {
-    errors.houseName = "Your quest starts with a house name!"
-  }
-  if(!formValues.email) {
-    errors.email = "An email is necessary for your adventure";
-    formValues = email
-  }
-  return errors;
-};
+// RegisterWG.propTypes = {
+//   onSubmit: PropTypes.func.isRequired
+// }
 
-export default reduxForm({
-  form: 'createWG',
-  validate
-})(RegisterWG);
+export default RegisterWG
