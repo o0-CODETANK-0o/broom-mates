@@ -21,7 +21,7 @@ class RegisterWG extends Component {
   }
 
   onSubmit = (e) => {
-    console.log('console log is here: ', this.props.data)
+    console.log('values for backend: ', this.props.data)
     //values for backend are here PLAMEN
   }
 
