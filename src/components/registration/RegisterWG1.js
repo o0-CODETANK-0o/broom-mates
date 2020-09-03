@@ -24,10 +24,9 @@ class RegisterWG1 extends React.Component {
     )
   }
 
-  onSubmit(formValues) {
-    console.log(formValues);
-    // let houseValues = formValues;
-  }
+
+
+
 
   render() {
     return (
@@ -38,7 +37,7 @@ class RegisterWG1 extends React.Component {
           <div className='underline'></div>
         </div>
 
-        <form onSubmit={this.props.handleSubmit(this.onSubmit)} >
+        <form onSubmit={this.props.handleSubmit} >
             <Field name="houseName" component={this.renderInput} label="Name of the WG"/>
             <Field name="email" type="email"  validate={email} component={this.renderInput} label="email of the wg"/>
             
@@ -70,5 +69,7 @@ const validate = (formValues) => {
 
 export default reduxForm({
   form: 'createWG',
+  destroyOnUnmount: false,
+  forceUnregisterOnUnmount: true,  
   validate
 })(RegisterWG1);

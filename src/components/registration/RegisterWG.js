@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import RegisterWG1 from './RegisterWG1';
 import TasksManager from './TasksManager';
 
@@ -19,19 +20,25 @@ class RegisterWG extends Component {
     this.setState({ page: this.state.page - 1 })
   }
 
+  onSubmit = (e) => {
+    console.log('console log is here: ', this.props.data)
+    //values for backend are here PLAMEN
+  }
+
   render() {
-    const { onSubmit } = this.props
+    
     const { page } = this.state
     return (<div>
         {page === 1 && <RegisterWG1 onSubmit={this.nextPage}/>}
-        {page === 2 && <TasksManager previousPage={this.previousPage} onSubmit={onSubmit}/>}
+        {page === 2 && <TasksManager previousPage={this.previousPage} onSubmit={this.onSubmit}/>}
       </div>
     )
   }
 }
 
-// RegisterWG.propTypes = {
-//   onSubmit: PropTypes.func.isRequired
-// }
 
-export default RegisterWG
+function mapStateToProps(state) {
+  return {data: state.form.createWG}
+}
+
+export default connect(mapStateToProps)(RegisterWG)

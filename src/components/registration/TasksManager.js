@@ -3,9 +3,11 @@ import { Field, reduxForm } from 'redux-form'
 
 
 const TasksManager = (props) => {
-  const { handleSubmit, previousPage, pristine, submitting } = props
+  const { previousPage } = props
+
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={props.handleSubmit}>
       <div className='header '>
           <h1 className='text'>select relevant tasks</h1>
           <div className='underline'></div>
@@ -71,14 +73,14 @@ const TasksManager = (props) => {
 
       <div>
       <button type="button" className="input" onClick={previousPage}>Previous</button>
-      <button type="submit" className="input" onSubmit={pristine || submitting}>Submit</button>        
+      <button type="submit" className="input" >Submit</button>        
       </div>
     </form>
   )
 }
 
 export default reduxForm({
-  form: 'tasksManager',  //Form name is same
+  form: 'createWG',  //Form name is same
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,  // <------ unregister fields on unmount
 })(TasksManager)
