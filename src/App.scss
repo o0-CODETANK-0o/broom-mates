@@ -110,6 +110,7 @@ html {
   background: var(--green);
   border-color: var(--purple);
   color: var(--purple);
+  width: 100%;
 }
 
 .avatar {
@@ -178,4 +179,27 @@ html {
   .border {
     margin: 0;
   }
+}
+
+
+//CHARACTER TASKS
+
+.image {
+  height: 100px;
+  width: 100px;
+}
+
+.charInfos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.charDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.task-item {
+  display: flex;
 }

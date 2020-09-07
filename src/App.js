@@ -19,6 +19,8 @@ import ValidateProgress from './components/layout/ValidateProgress';
 import Inventory from './components/layout/Inventory';
 import Shop from './components/layout/Shop';
 import TasksManager from './components/registration/TasksManager';
+import CharacterTasks from './components/characterTasks/CharacterTasks';
+import TaskInProgress from './components/characterTasks/TaskInProgress';
 // THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES
 
 
@@ -76,6 +78,8 @@ function App() {
         <Route exact path='/inventory' component={Inventory} />
         <Route exact path='/shop' component={Shop} />
         <Route exact path='/TasksManager' component={TasksManager} />
+        <Route exact path='/characterTasks' component={CharacterTasks} />
+        <Route exact path='/TaskInProgress' component={TaskInProgress} />
         {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
 
         <Route exact path='/login' component={Login} />
