@@ -205,8 +205,22 @@ transition:.5s;
 
 }
 
+.carousel-container{
+  display:flex;
+  align-items: center;
+}
 
+.goArrow{
+  max-width:10rem;
+  max-height: 4rem;
+}
 
+form{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .avatar:hover {
   cursor: pointer;

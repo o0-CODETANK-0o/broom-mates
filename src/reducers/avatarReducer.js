@@ -20,11 +20,8 @@ const avatarReducer = (
         ...state,
         counter: action.payload.counter,
         saved:
-          action.payload.counter ===
-          action.payload.items.length - 1
-            ? action.payload.items[
-                action.payload.items.length - 1
-              ]
+          action.payload.counter === action.payload.items.length - 1
+            ? action.payload.items[action.payload.items.length - 1]
             : action.payload.items[action.payload.counter],
       };
 
