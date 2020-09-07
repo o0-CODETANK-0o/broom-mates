@@ -12,7 +12,7 @@ const Caro = () => {
   );
 
   const items = useSelector((state) => {
-    console.log(state);
+  
     return state.genderReducer[
       state.genderReducer.currentGender
     ];
@@ -21,11 +21,8 @@ const Caro = () => {
   let x = useSelector((state) => state.xreducer.x);
 
   const goLeft = (e) => {
-<<<<<<< HEAD
-    e.preventDefault()
-=======
+  
     e.preventDefault();
->>>>>>> fdfb52e773ba0baded21b20b304656cef58efe60
     x === 0
       ? dispatch(xAction(-100 * (items.length - 1)))
       : dispatch(xAction(x + 100));
@@ -62,18 +59,18 @@ const Caro = () => {
   ));
 
   return (
-    <>
-      <button className="goLeft direction" onClick={goLeft}>
+    <div className="carousel-container" >
+      <button className="goLeft direction input input-green goArrow" onClick={goLeft}>
         left
       </button>
       <div className="carousel">{carouselJSX}</div>
       <button
-        className="goright direction"
+        className="goright direction input input-green goArrow"
         onClick={goRight}
       >
         right
       </button>
-    </>
+    </div>
   );
 };
 

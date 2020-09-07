@@ -20,6 +20,23 @@ const RegisterUser = () => {
       ]
   );
 
+
+// let name=useSelector(state=>state.registerUserNameReducer.name)
+// let avatar=useSelector(state=>state.avatarReducer.saved)
+// let type=useSelector(state=>state.genderReducer.currentGender)
+
+
+
+// if(name){
+//   console.log(name)
+// }
+// if(avatar){
+//   console.log(avatar)
+// }
+// if(type){
+//   console.log(type)
+// }
+
   const dispatch = useDispatch();
 
   const pickGender = (e) => {
@@ -98,7 +115,7 @@ const RegisterUser = () => {
           </button>
         </form>
 
-        <img src={currentAvatar} alt="currentAvatar" />
+        {/* <img src={currentAvatar} alt="currentAvatar" /> */}
       </div>
 
       <div className="footer">
