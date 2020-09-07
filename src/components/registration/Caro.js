@@ -21,11 +21,8 @@ const Caro = () => {
   let x = useSelector((state) => state.xreducer.x);
 
   const goLeft = (e) => {
-<<<<<<< HEAD
-    e.preventDefault()
-=======
+  
     e.preventDefault();
->>>>>>> fdfb52e773ba0baded21b20b304656cef58efe60
     x === 0
       ? dispatch(xAction(-100 * (items.length - 1)))
       : dispatch(xAction(x + 100));
