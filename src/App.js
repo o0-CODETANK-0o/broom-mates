@@ -16,6 +16,7 @@ import Inventory from './components/layout/Inventory';
 import Shop from './components/layout/Shop';
 import TasksManager from './components/registration/TasksManager';
 import IndividualValidation from './components/layout/IndividualValidation/IndividualValidation';
+import TaskProgress from './components/layout/TaskProgress';
 
 
 
@@ -37,6 +38,7 @@ function App() {
         <Route path='/login' component={Login} />
         <Route path='/credits' component={Credits} />
         <Route path='/individualvalidation' component={IndividualValidation} />
+        <Route path='/taskprogress' component={TaskProgress} />
       </Switch>
     </div>
   );

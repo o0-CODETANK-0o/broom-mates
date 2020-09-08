@@ -30,7 +30,6 @@ const initialState = {
 const tasksReducer = (state = initialState, action) => {
 
     if (action.type === 'UPDATE_TASK') {
-        alert('do you want to validate?')
         const items = state.items.map((item) => {
             if (item._id === action.payload) {
                 item.status = !item.status;
@@ -40,6 +39,9 @@ const tasksReducer = (state = initialState, action) => {
         return Object.assign({}, state, {
             items : items
         });
+    } else if (action.type === 'UNVALIDATE_TASK') {
+        alert(`you can't unvalidate a task`);
+        return state;    
     }
     return state;
 

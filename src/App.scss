@@ -5,10 +5,26 @@
   font-family: 'Press Start 2P', cursive;
 }
 
+// MODAL
+
+body .react-confirm-alert-body {
+  font-family: 'Press Start 2P', cursive;
+  width: 300px;
+  padding: 30px;
+  text-align: left;
+  background: var(--darkpurple);
+  border-radius: 10px;
+  border: 5px solid var(--fucsia);
+  box-shadow: 0 20px 75px rgba(0, 0, 0, 0.13);
+  color: var(--fucsia);
+}
+
 :root {
   --purple: #4d036e;
   --green: #41ff00;
   --yellow: #FFFF00;
+  --fucsia: #FF00FF;
+  --darkpurple: #4E0F6C;
 }
 
 html {

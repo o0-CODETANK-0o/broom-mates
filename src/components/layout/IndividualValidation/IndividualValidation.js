@@ -17,9 +17,9 @@ const IndividualValidation = () => {
             </div>
     
             <div className='content '>
-                <h1>Tasks to Validate</h1>
+                <h1>TASKS TO VALIDATE</h1>
                 <OpenTasks data={items}/>
-                <h1>Validated Tasks</h1>
+                <h1>VALIDATED TASKS</h1>
                 <ClosedTasks data={items} />
             </div>
     

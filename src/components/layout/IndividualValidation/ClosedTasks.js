@@ -1,4 +1,7 @@
 import React from 'react';
+import { showAlert } from '../../../actions/tasksActions';
+import { connect } from 'react-redux';
+
 
 const ClosedTasks = ( props ) => {
     
@@ -8,13 +11,13 @@ const ClosedTasks = ( props ) => {
         data.map(item => {
             if (item.status)
             return (
-                <div key={item._id}>
+                <div onClick={() => props.showAlert(item._id)} key={item._id}>
                     <div className="text-line-through opacity">{item.text}</div>
                 </div>
             )
         })
     ) : (
-        <p>You have no todos left</p>
+        <p>No task has been validated</p>
     )
 
     return (
@@ -24,4 +27,4 @@ const ClosedTasks = ( props ) => {
     )
 };
 
-export default ClosedTasks;
+export default connect(null, { showAlert })(ClosedTasks);
