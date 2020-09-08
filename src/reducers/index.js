@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 
 import registerUserNameReducer  from "./registerUserNameReducer"; 
 import registerUserGenderReducer  from "./registerUserGenderReducer"; 
+import tasksReducer from './tasksReducer';
 
 
 // const InitialState={
@@ -13,11 +14,12 @@ import registerUserGenderReducer  from "./registerUserGenderReducer";
 
 
 
- const rootReducer=combineReducers(
+ const rootReducer = combineReducers(
      {
         registerUserNameReducer,
-        registerUserGenderReducer
+        registerUserGenderReducer,
+        tasksReducer
         }
-        );
+    );
 
 export default rootReducer;

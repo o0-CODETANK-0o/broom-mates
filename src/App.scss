@@ -77,6 +77,14 @@ html {
   text-transform: uppercase;
 }
 
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.opacity {
+  opacity: 0.5;
+}
+
 .border {
   border: var(--green) solid 0.5rem;
   max-height: 100vh;
