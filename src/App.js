@@ -1,5 +1,8 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
+import logo from './assets/logos-and-icons/broommates-logo.png';
+import Speaker from './components/layout/Speaker';
+
 // CSS 
 import './App.scss';
 // COMPONENTS
@@ -15,6 +18,9 @@ import ValidateProgress from './components/layout/ValidateProgress';
 import Inventory from './components/layout/Inventory';
 import Shop from './components/layout/Shop';
 import TasksManager from './components/registration/TasksManager';
+import CharacterTasks from './components/characterTasks/CharacterTasks';
+import TaskInProgress from './components/characterTasks/TaskInProgress';
+// THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES
 
 
 
@@ -22,19 +28,64 @@ function App() {
   return (
     <div className='App'>
       <Switch>
+        <Route exact path='/'>
+          <div className='border'>
+            <header className='header'>
+              <img src={logo} className='App-logo' alt='logo' />
+            </header>
+
+            <div className='content'>
+              <Link to='/RegisterWG'>
+                <button className='input input-purple '>
+                  <p className='text'>create wg</p>
+                </button>
+              </Link>
+
+              <Link to='/login'>
+                <button className='input input-purple '>
+                  <p className='text'>continue</p>
+                </button>
+              </Link>
+
+              {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
+              <Link to='/RegisterUser'>
+                <button className='input input-purple '>
+                  <p className='text'>character</p>
+                </button>
+              </Link>
+              {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
+
+              <Link to='/credits'>
+                <button className='input input-purple '>
+                  <p className='text'>credits</p>
+                </button>
+              </Link>
+            </div>
+            <div className='footer'>
+              <Speaker/>
+            </div>
+          </div>
+        </Route>
+        <Route exact path='/registerwg' component={RegisterWG} />
+
+        {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
         <Route path='/' component={Home} exact />
         <Route path='/home' component={Home} exact />
         <Route path='/registerwg' component={RegisterWG} />
-        <Route path='/registeruser' component={RegisterUser} />
-        <Route path='/members4' component={Members} />
-        <Route path='/members2' component={Members2} />
-        <Route path='/userdetails' component={UserDetails} />
-        <Route path='/validateprogress' component={ValidateProgress} />
-        <Route path='/inventory' component={Inventory} />
-        <Route path='/shop' component={Shop} />
-        <Route path='/TasksManager' component={TasksManager} />
-        <Route path='/login' component={Login} />
-        <Route path='/credits' component={Credits} />
+        <Route exact path='/registeruser' component={RegisterUser} />
+        <Route exact path='/members4' component={Members} />
+        <Route exact path='/members2' component={Members2} />
+        <Route exact path='/userdetails' component={UserDetails} />
+        <Route exact path='/validateprogress' component={ValidateProgress} />
+        <Route exact path='/inventory' component={Inventory} />
+        <Route exact path='/shop' component={Shop} />
+        <Route exact path='/TasksManager' component={TasksManager} />
+        <Route exact path='/characterTasks' component={CharacterTasks} />
+        <Route exact path='/TaskInProgress' component={TaskInProgress} />
+        {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
+
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/credits' component={Credits} />
       </Switch>
     </div>
   );
