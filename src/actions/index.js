@@ -1,7 +1,3 @@
-
-
-
-
 const registerUserAction = (payload) => {
    return {
      type: 'REGISTER_USER',
