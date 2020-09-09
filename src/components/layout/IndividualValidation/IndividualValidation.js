@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import Modal from '../Modal';
 
 const IndividualValidation = () => {
-    // let items = this.props.items;
 
     let { items, modalData } = useSelector(state => { return state.tasksReducer});
 
@@ -19,7 +18,6 @@ const IndividualValidation = () => {
     
             <div className='content '>
                 { modalData.show && <Modal /> }
-                {/* <Modal displayItem={items.text} /> */}
                 <h1>TASKS TO VALIDATE</h1>
                 <OpenTasks data={items}/>
                 <h1>VALIDATED TASKS</h1>

@@ -4,16 +4,13 @@ import { useSelector, connect } from 'react-redux';
 
 const Modal = (props) => {
 
-    // let { displayItem } = props;
-    let { show, displayText, id } = useSelector(state => state.tasksReducer.modalData);
-
-    console.log( { show, displayText, id });
+    let { displayText, id } = useSelector(state => state.tasksReducer.modalData);
 
     return (
         <div className="modal-body">
             <div className="modal-text-area">
                 <h1>DO YOU WANT TO VALIDATE</h1>
-                <h3>{displayText}</h3>
+                <h3>{displayText.toUpperCase()}?</h3>
             </div>
             <div className="modal-button-area">
                 <button onClick={() => props.updateTask(id)} className="input input-fucsia">YES</button>
