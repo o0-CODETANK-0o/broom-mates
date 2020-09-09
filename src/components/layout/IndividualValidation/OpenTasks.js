@@ -1,5 +1,5 @@
 import React from 'react';
-import { updateTask } from '../../../actions/tasksActions';
+import { setModal } from '../../../actions/tasksActions';
 import { connect } from 'react-redux';
 
 const OpenTasks = (props) => {
@@ -8,12 +8,14 @@ const OpenTasks = (props) => {
 
     const taskList = data.length ? (
         data.map(item => {
-            if (!item.status)
+            if (!item.status){
+            let modalConfig = {show : true, displayText : item.text, id: item._id};
             return (
-                <div onClick={() => props.updateTask(item._id)} key={item._id}>
+                <div onClick={() => props.setModal(modalConfig)} key={item._id}>
                     <div >{item.text}</div>
                 </div>
             )
+          }
         })
     ) : (
         <p>There are no tasks to validate.</p>
@@ -26,4 +28,4 @@ const OpenTasks = (props) => {
     )
 };
 
-export default connect(null, { updateTask })(OpenTasks);
+export default connect(null, { setModal })(OpenTasks);

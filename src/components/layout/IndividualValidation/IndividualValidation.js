@@ -8,7 +8,7 @@ import Modal from '../Modal';
 const IndividualValidation = () => {
     // let items = this.props.items;
 
-    let items = useSelector(state => { return state.tasksReducer.items});
+    let { items, modalData } = useSelector(state => { return state.tasksReducer});
 
     return (
         <div className=' border'>
@@ -18,7 +18,8 @@ const IndividualValidation = () => {
             </div>
     
             <div className='content '>
-                <Modal data={items} />
+                { modalData.show && <Modal /> }
+                {/* <Modal displayItem={items.text} /> */}
                 <h1>TASKS TO VALIDATE</h1>
                 <OpenTasks data={items}/>
                 <h1>VALIDATED TASKS</h1>
