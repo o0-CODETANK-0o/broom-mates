@@ -1,40 +1,77 @@
 import React from 'react';
-import skater from '../../assets/skater.png';
-import Slider from 'infinite-react-carousel';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { xAction } from '../../actions/xAction';
+import { avatarAction } from '../../actions/avatarAction';
 
+const Caro = () => {
+  const dispatch = useDispatch();
 
-const caro = () => {
+  const counter = useSelector(
+    (state) => state.avatarReducer.counter
+  );
 
-    const SimpleSlider = () => (
-        <Slider className="carousel" dots arrows={false}>
-          <div>
-            <img src={skater} alt='skater' className='avatar' />
+  const items = useSelector((state) => {
+  
+    return state.genderReducer[
+      state.genderReducer.currentGender
+    ];
+  });
 
-          </div>
-          
-          <div>
-          <img src={skater} alt='skater' className='avatar' />
-          </div>
-          <div>
-          <img src={skater} alt='skater' className='avatar' />
-          </div>
-          <div>
-          <img src={skater} alt='skater' className='avatar' />
-          </div>
-          <div>
-          <img src={skater} alt='skater' className='avatar' />
-          </div>
-        </Slider>
-      );
+  let x = useSelector((state) => state.xreducer.x);
+
+  const goLeft = (e) => {
+  
+    e.preventDefault();
+    x === 0
+      ? dispatch(xAction(-100 * (items.length - 1)))
+      : dispatch(xAction(x + 100));
+    callavatarLeft();
+  };
+
+  const callavatarLeft = () => {
+    counter === 0
+      ? dispatch(avatarAction(items.length - 1, items))
+      : dispatch(avatarAction(counter - 1, items));
+  };
+
+  const callavatarRight = () => {
+    counter === items.length - 1
+      ? dispatch(avatarAction(0, items))
+      : dispatch(avatarAction(counter + 1, items));
+  };
+  const goRight = (e) => {
+    e.preventDefault()
+    x === -100 * (items.length - 1)
+      ? dispatch(xAction(0))
+      : dispatch(xAction(x - 100));
+    callavatarRight();
+  };
+
+  let carouselJSX = items.map((avatar, index) => (
+    <img
+      alt="avatar"
+      src={avatar}
+      className="avatar"
+      key={index}
+      style={{ transform: `translateX(${x}%)` }}
+    />
+  ));
 
   return (
-
-
-    <div>
-      {SimpleSlider()}
+    <div className="carousel-container" >
+      <button className="goLeft direction input input-green goArrow" onClick={goLeft}>
+        left
+      </button>
+      <div className="carousel">{carouselJSX}</div>
+      <button
+        className="goright direction input input-green goArrow"
+        onClick={goRight}
+      >
+        right
+      </button>
     </div>
   );
-}
+};
 
-export default caro;
+export default Caro;

@@ -1,7 +1,23 @@
 import { combineReducers } from 'redux';
 
-import * as reducers from './';
+import registerUserNameReducer from './registerUserNameReducer';
+import xreducer from './xreducer';
+import avatarReducer from './avatarReducer';
 
- combineReducers(reducers);
+import genderReducer from './genderReducer';
 
-export default combineReducers;
+
+
+
+
+
+
+
+const rootReducer = combineReducers({
+  registerUserNameReducer,
+  genderReducer,
+  avatarReducer,
+  xreducer,
+});
+
+export default rootReducer;
