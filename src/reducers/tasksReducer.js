@@ -42,6 +42,8 @@ const tasksReducer = (state = initialState, action) => {
     } else if (action.type === 'UNVALIDATE_TASK') {
         alert(`you can't unvalidate a task`);
         return state;    
+    } else if (action.type === 'SHOW_MODAL') {
+        
     }
     return state;
 
