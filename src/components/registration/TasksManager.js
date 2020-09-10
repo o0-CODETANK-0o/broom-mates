@@ -27,6 +27,8 @@ const TasksManager = (props) => {
           <label><Field name="kitchen.cleanWindows" component="input" type="checkbox" value="clean the windows"/>clean the windows</label>
           <label><Field name="kitchen.cleanKnobs" component="input" type="checkbox" value="vacuum the floor"/>clean the door knobs</label>
           <label><Field name="kitchen.removeSpiders" component="input" type="checkbox" value="vacuum the floor"/>remove spiderwebs from the ceiling</label>
+          <label><Field name="kitchen.cleanShelves" component="input" type="checkbox" value="clean the shelves"/>clean the shelves</label>
+
         </div>
       </div>
 
@@ -44,6 +46,8 @@ const TasksManager = (props) => {
           <label><Field name="bathroom.cleanKnobs" component="input" type="checkbox" value="vacuum the floor"/>clean the door knobs</label>
           <label><Field name="bathroom.changeCarpet" component="input" type="checkbox" value="change the carpet"/>change the carpet</label>
           <label><Field name="bathroom.removeSpiders" component="input" type="checkbox" value="vacuum the floor"/>remove spiderwebs from the ceiling</label>
+          <label><Field name="bathroom.cleanShelves" component="input" type="checkbox" value="clean the shelves"/>clean the shelves</label>
+
         </div>
       </div>
 
