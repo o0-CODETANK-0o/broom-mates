@@ -5,10 +5,36 @@
   font-family: 'Press Start 2P', cursive;
 }
 
+// MODAL
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: var(--darkpurple);
+  border: 5px solid var(--green);
+  border-radius: 20px;
+  height: 50vh;
+  background-color: var(--fucsia);
+  position: absolute;
+  width: 94%;
+  .modal-text-area {
+    padding: 20px 0px 20px 0px;
+    h1 {
+      margin-bottom: 10px;
+    }
+  }
+
+}
+
+// COLORS
+
 :root {
   --purple: #4d036e;
   --green: #41ff00;
   --yellow: #FFFF00;
+  --fucsia: #FF00FF;
+  --darkpurple: #4E0F6C;
 }
 
 html {
@@ -65,6 +91,9 @@ html {
   align-items: center;
   justify-content: center;
   height: 66vh;
+  // justify-content: flex-start;
+
+  // height: 30vh;
 }
 
 .underline {
@@ -75,6 +104,14 @@ html {
 
 .text {
   text-transform: uppercase;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.opacity {
+  color: grey;
 }
 
 .border {
@@ -88,9 +125,11 @@ html {
   background: var(--purple);
 }
 
+// BUTTONS
+
 .input {
   border: 2px solid;
-  border-radius: 1.2rem;
+  border-radius: 20px;
   padding: 1rem 1rem;
   margin: 1rem;
   width: 15rem;
@@ -126,6 +165,11 @@ html {
   cursor: pointer;
 }
 
+.input-fucsia {
+  background: var(--fucsia);
+  color: var(--darkpurple);
+  border: 5px solid var(--green);
+}
 
 .user-gallery {
   display: flex;
@@ -141,17 +185,21 @@ html {
 .details {
   margin-bottom: 1rem;
 }
+
 .user-header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
+
 .userdetail-text {
   font-size: 2rem;
 }
+
 .totalpoints {
   font-size: 3rem;
 }
+
 .task {
   display: flex;
   margin: 1rem;
@@ -224,4 +272,26 @@ form{
 
 .avatar:hover {
   cursor: pointer;
+}
+
+//CHARACTER TASKS
+
+.image {
+  height: 100px;
+  width: 100px;
+}
+
+.charInfos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.charDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.task-item {
+  display: flex;
 }

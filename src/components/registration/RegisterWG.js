@@ -1,37 +1,44 @@
-import React from 'react';
-import StepZilla from 'react-stepzilla';
-import Speaker from '../layout/Speaker';
-
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import RegisterWG1 from './RegisterWG1';
-import RegisterWG2 from './RegisterWG2';
-import RegisterWG3 from './RegisterWG3';
+import TasksManager from './TasksManager';
 
-const RegisterWG = () => {
-  const steps = [
-    { name: 'Step 1', component: <RegisterWG1 /> },
-    { name: 'Step 2', component: <RegisterWG2 /> },
-    { name: 'Step 3', component: <RegisterWG3 /> },
-  ];
+class RegisterWG extends Component {
+  constructor(props) {
+    super(props)
+    this.nextPage = this.nextPage.bind(this)
+    this.previousPage = this.previousPage.bind(this)
+    this.state = {
+      page: 1
+    }
+  }
+  nextPage() {
+    this.setState({ page: this.state.page + 1 })
+  }
 
-  return (
+  previousPage() {
+    this.setState({ page: this.state.page - 1 })
+  }
+
+  onSubmit = (e) => {
+    console.log('values for backend: ', this.props.data)
+    //values for backend are here PLAMEN
+  }
+
+  render() {
     
-      <div className=' border'>
-        <div className='header '>
-          <h1 className='text'>create wg</h1>
-          <div className='underline'></div>
-          <div className='underline'></div>
-        </div>
-
-        <div className='step-progress content '>
-          <StepZilla steps={steps} showNavigation={false} showSteps={false} />
-        </div>
-
-        <div className='footer'>
-          <Speaker />
-        </div>
+    const { page } = this.state
+    return (<div>
+        {page === 1 && <RegisterWG1 onSubmit={this.nextPage}/>}
+        {page === 2 && <TasksManager previousPage={this.previousPage} onSubmit={this.onSubmit}/>}
       </div>
-    
-  );
-};
+    )
+  }
+}
 
-export default RegisterWG;
+
+function mapStateToProps(state) {
+  return {data: state.form.createWG}
+}
+
+export default connect(mapStateToProps)(RegisterWG)

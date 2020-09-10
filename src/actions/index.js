@@ -1,7 +1,3 @@
-
-
-
-
 const registerUserAction = (payload) => {
    return {
      type: 'REGISTER_USER',
@@ -9,4 +5,11 @@ const registerUserAction = (payload) => {
    };
  };
  
- export default registerUserAction;
+export const CreateWG = (name, email)=>{
+   return{
+      type: 'CREATE_WG',
+      payload: { name, email }
+   };
+};
+
+export default registerUserAction;
