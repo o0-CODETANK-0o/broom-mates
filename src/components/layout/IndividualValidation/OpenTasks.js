@@ -15,12 +15,11 @@ const OpenTasks = (props) => {
             if (!item.status){
             let modalConfig = {show : true, displayText : item.text, id: item._id};
             return (
-                <>
-                { modalData.show && <Modal action={ () => props.updateTask(item._id) }/> }
-                <div onClick={() => props.setModal(modalConfig)} key={item._id}>
-                    <div >{item.text}</div>
+                <div  key={item._id} >
+                <div onClick={() => props.setModal(modalConfig)}>
+                    <div>{item.text}</div>
                 </div>
-                </>
+                </div>
             )
           }
         })
@@ -30,6 +29,7 @@ const OpenTasks = (props) => {
 
     return (
         <>
+        { modalData.show && <Modal header={'DO YOU WANT TO VALIDATE'} yesButton={'YES'} noButton={'NO'} action={ () => props.updateTask(modalData.id) }/> }
         {taskList}
         </>
     )

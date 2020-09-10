@@ -1,4 +1,9 @@
-const initialState = {show : false, displayText : '', id: null};
+const initialState = {
+    action: null,
+    show : false, 
+    displayText : '', 
+    id: null
+};
 
 const modalReducer = (state = initialState, action) => {
     if (action.type === 'SHOW_MODAL') {
