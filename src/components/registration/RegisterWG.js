@@ -37,7 +37,7 @@ class RegisterWG extends Component {
 
     return (
       <div>
-        {this.props.modalData.show && <Modal header={"lala"} yesButton={'YES'} noButton={'NO'} />}
+        {this.props.modalData.show && <Modal yesButton={'YES'} noButton={'NO'} />}
         {page === 1 && <RegisterWG1 onSubmit={() => this.openModal(this.nextPage, 'You want to keep this ID?')}/>}
         {page === 2 && <TasksManager previousPage={this.previousPage} onSubmit={() => this.openModal(this.onSubmit, 'You want to keep the selected tasks?') }/>}
       </div>

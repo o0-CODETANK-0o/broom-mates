@@ -15,7 +15,7 @@ const OpenTasks = (props) => {
             if (!item.status){
             let modalConfig = {show : true, displayText : item.text, id: item._id};
             return (
-                <div  key={item._id} >
+                <div key={item._id} >
                 <div onClick={() => props.setModal(modalConfig)}>
                     <div>{item.text}</div>
                 </div>

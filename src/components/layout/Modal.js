@@ -18,8 +18,8 @@ const Modal = (props) => {
     return (
         <div className="modal-body">
             <div className="modal-text-area">
-                <h1>{props.header.toUpperCase()}</h1>
-                <h3>{displayText.toUpperCase()}?</h3>
+                <h1>{(props.header) ? 'ENTER TEXT HERE' : ''}</h1>
+                <h3>{displayText.toUpperCase()}</h3>
             </div>
             <div className="modal-button-area">
                 <button onClick={ closeModal } className="input input-fucsia">{props.yesButton}</button>
