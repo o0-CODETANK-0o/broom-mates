@@ -5,12 +5,14 @@ import { reducer as formReducer} from 'redux-form';
 import xreducer from './xreducer';
 import avatarReducer from './avatarReducer';
 import registerUserNameReducer  from "./registerUserNameReducer"; 
-// import registerUserGenderReducer  from "./registerUserGenderReducer"; 
+import userInviteReducer  from "./userInviteReducer"; 
+
 import tasksReducer from './tasksReducer';
 
 import genderReducer from './genderReducer';
 
 const rootReducer = combineReducers({
+  userInviteReducer,
   registerUserNameReducer,
   genderReducer,
   avatarReducer,
