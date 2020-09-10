@@ -1,10 +1,15 @@
 import React from 'react';
-import { updateTask, setModal } from './../../actions/tasksActions';
+import { setModal } from './../../actions/modalActions';
 import { useSelector, connect } from 'react-redux';
 
 const Modal = (props) => {
 
-    let { displayText, id } = useSelector(state => state.tasksReducer.modalData);
+    let { displayText } = useSelector(state => state.modalReducer);
+
+    const closeModal = () => {
+        props.action();
+        props.setModal({ show: false});
+    }
 
     return (
         <div className="modal-body">
@@ -13,11 +18,11 @@ const Modal = (props) => {
                 <h3>{displayText.toUpperCase()}?</h3>
             </div>
             <div className="modal-button-area">
-                <button onClick={() => props.updateTask(id)} className="input input-fucsia">YES</button>
+                <button onClick={ closeModal } className="input input-fucsia">YES</button>
                 <button onClick={() => props.setModal({ show: false }) } className="input input-fucsia">NO</button>
             </div>
         </div>
     )
 };
 
-export default connect(null, {updateTask, setModal})(Modal);
+export default connect(null, {setModal})(Modal);

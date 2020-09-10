@@ -7,7 +7,7 @@ import avatarReducer from './avatarReducer';
 import registerUserNameReducer  from "./registerUserNameReducer"; 
 // import registerUserGenderReducer  from "./registerUserGenderReducer"; 
 import tasksReducer from './tasksReducer';
-
+import modalReducer from './modalReducer';
 import genderReducer from './genderReducer';
 
 const rootReducer = combineReducers({
@@ -15,6 +15,7 @@ const rootReducer = combineReducers({
   genderReducer,
   avatarReducer,
   tasksReducer,
+  modalReducer,
   xreducer,
   form: formReducer
 });

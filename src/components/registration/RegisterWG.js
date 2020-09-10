@@ -12,6 +12,7 @@ class RegisterWG extends Component {
       page: 1
     }
   }
+
   nextPage() {
     this.setState({ page: this.state.page + 1 })
   }
@@ -21,13 +22,15 @@ class RegisterWG extends Component {
   }
 
   onSubmit = (e) => {
+
     console.log('values for backend: ', this.props.data)
     //values for backend are here PLAMEN
   }
 
   render() {
     
-    const { page } = this.state
+    const { page } = this.state;
+
     return (<div>
         {page === 1 && <RegisterWG1 onSubmit={this.nextPage}/>}
         {page === 2 && <TasksManager previousPage={this.previousPage} onSubmit={this.onSubmit}/>}
@@ -39,6 +42,6 @@ class RegisterWG extends Component {
 
 function mapStateToProps(state) {
   return {data: state.form.createWG}
-}
+};
 
-export default connect(mapStateToProps)(RegisterWG)
+export default connect(mapStateToProps)(RegisterWG);
