@@ -91,9 +91,15 @@ html {
   align-items: center;
   justify-content: center;
   height: 66vh;
-  // justify-content: flex-start;
+}
 
-  // height: 30vh;
+.redux-form-elements {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
 }
 
 .underline {
@@ -121,6 +127,7 @@ html {
   margin: 1rem;
   padding: 1rem;
 }
+
 .frame {
   background: var(--purple);
 }
@@ -259,7 +266,7 @@ transition:.5s;
 }
 
 .goArrow{
-  max-width:10rem;
+  max-width: 40px;
   max-height: 4rem;
 }
 
