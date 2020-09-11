@@ -74,7 +74,8 @@ const TasksManager = (props) => {
       <div>
       <button type="button" className="input" onClick={previousPage}>Previous</button>
       <Link to="inviteuser">
-      <button type="submit" className="input" >Submit</button>    </Link>    
+      <button type="submit" className="input" >Submit</button>   
+      </Link>    
       </div>
     </form>
   )
