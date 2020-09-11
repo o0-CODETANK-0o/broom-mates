@@ -16,7 +16,7 @@ const IndividualValidation = () => {
                 <div className='underline'></div>
             </div>
     
-            <div className='content '>
+            <div className='content'>
                 <h1>TASKS TO VALIDATE</h1>
                 <OpenTasks data={items}/>
                 <h1>VALIDATED TASKS</h1>

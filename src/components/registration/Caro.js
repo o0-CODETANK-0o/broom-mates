@@ -40,6 +40,7 @@ const Caro = () => {
       ? dispatch(avatarAction(0, items))
       : dispatch(avatarAction(counter + 1, items));
   };
+
   const goRight = (e) => {
     e.preventDefault()
     x === -100 * (items.length - 1)
@@ -60,15 +61,15 @@ const Caro = () => {
 
   return (
     <div className="carousel-container" >
-      <button className="goLeft direction input input-green goArrow" onClick={goLeft}>
-        left
+      <button className="input input-green goArrow" onClick={goLeft}>
+      &larr;
       </button>
       <div className="carousel">{carouselJSX}</div>
       <button
-        className="goright direction input input-green goArrow"
+        className="input input-green goArrow"
         onClick={goRight}
       >
-        right
+        &rarr;
       </button>
     </div>
   );
