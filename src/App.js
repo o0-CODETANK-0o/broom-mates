@@ -18,6 +18,7 @@ import ValidateProgress from './components/layout/ValidateProgress';
 import Inventory from './components/layout/Inventory';
 import Shop from './components/layout/Shop';
 import TasksManager from './components/registration/TasksManager';
+import InviteUser from './components/registration/InviteUser';
 import CharacterTasks from './components/characterTasks/CharacterTasks';
 import TaskInProgress from './components/characterTasks/TaskInProgress';
 // THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES
@@ -25,6 +26,7 @@ import IndividualValidation from './components/layout/IndividualValidation/Indiv
 import TaskProgress from './components/layout/TaskProgress';
 
 
+import InviteUser from './components/registration/InviteUser';
 
 function App() {
   return (
@@ -75,6 +77,7 @@ function App() {
         <Route path='/home' component={Home} exact />
         <Route path='/registerwg' component={RegisterWG} />
         <Route exact path='/registeruser' component={RegisterUser} />
+        <Route exact path='/inviteuser' component={InviteUser} />
         <Route exact path='/members4' component={Members} />
         <Route exact path='/members2' component={Members2} />
         <Route exact path='/userdetails' component={UserDetails} />
@@ -86,6 +89,7 @@ function App() {
         <Route exact path='/TaskInProgress' component={TaskInProgress} />
         <Route exact path='/individualvalidation' component={IndividualValidation} />
         <Route exact path='/taskprogress' component={TaskProgress} />
+        <Route exact path='/inviteuser' component={InviteUser} />
 
         {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
 
