@@ -61,14 +61,14 @@ const Caro = () => {
   return (
     <div className="carousel-container" >
       <button className="goLeft direction input input-green goArrow" onClick={goLeft}>
-        left
+      &#60;
       </button>
       <div className="carousel">{carouselJSX}</div>
       <button
         className="goright direction input input-green goArrow"
         onClick={goRight}
       >
-        right
+        &#62; 	
       </button>
     </div>
   );

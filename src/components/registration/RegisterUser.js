@@ -20,23 +20,6 @@ const RegisterUser = () => {
       ]
   );
 
-
-// let name=useSelector(state=>state.registerUserNameReducer.name)
-// let avatar=useSelector(state=>state.avatarReducer.saved)
-// let type=useSelector(state=>state.genderReducer.currentGender)
-
-
-
-// if(name){
-//   console.log(name)
-// }
-// if(avatar){
-//   console.log(avatar)
-// }
-// if(type){
-//   console.log(type)
-// }
-
   const dispatch = useDispatch();
 
   const pickGender = (e) => {
@@ -68,7 +51,7 @@ const RegisterUser = () => {
     <div className="border">
       <div className="header">
         <div className="header-register-user">
-          u <h1 className="text">character</h1>
+          <h1 className="text">character</h1>
           <h1 className="text">creation</h1>
         </div>
         <div>
