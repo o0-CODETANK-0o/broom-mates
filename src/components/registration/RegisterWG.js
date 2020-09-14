@@ -4,7 +4,7 @@ import RegisterWG1 from './RegisterWG1';
 import TasksManager from './TasksManager';
 import Modal from '../layout/Modal';
 import { setModal } from './../../actions/modalActions';
-import RegisterUserPassword from './RegisterUserPassword';
+import RegisterUser from './RegisterUser';
 
 class RegisterWG extends Component {
   constructor(props) {
@@ -42,7 +42,7 @@ class RegisterWG extends Component {
         {this.props.modalData.show && <Modal yesButton={'YES'} noButton={'NO'} />}
         {page === 1 && <RegisterWG1 onSubmit={() => this.openModal(this.nextPage, `You want to keep the ID\n' + "${this.props.data.values.houseName}"?\n' + And this email address?\n ${this.props.data.values.houseName}`)}/>}
         {page === 2 && <TasksManager previousPage={this.previousPage} onSubmit={() => this.openModal(this.nextPage, 'You want to keep the selected tasks?') }/>}
-        {page === 3 && <RegisterUserPassword />}
+        {page === 3 && <RegisterUser />}
       </div>
     )
   }
