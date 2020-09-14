@@ -14,34 +14,39 @@ const CharacterTasks = () => {
 
     return (
     <div>
-        <div className="charInfos">
+        <div className="">
+            <h1>Julien</h1>
             <img src={Char} className="image" alt="character" />
-            <div className="charDetails">
-                <h2>Julien</h2>
-                <h3>XP Points:</h3>
-                <h2>420</h2>
-            </div>
         </div>
 
-        <div className=''>
+        <div className='content'>
                 { modalData.show && <Modal /> }
                 <div>
                     <div className='underline'></div>
-                    <h2>TASKS TO DO</h2>
+                    <h2>WEEKLY TASKS</h2>
                     <div className='underline'></div>
 
-                    <div className="content">
+                    <div className="">
                     <OpenTasks data={items}/>
                     </div>
+                    <div className='underline'></div>
+                    <div className="">
+                    <ClosedTasks data={items} />
+                    </div>
+
                 </div>
 
 
                 <div>
                     <div className='underline'></div>
-                    <h1>TASKS DONE</h1>
+                    <h1>MONTHLY TASKS</h1>
                     <div className='underline'></div>
 
-                    <div className="content">
+                    <div className="">
+                    <OpenTasks data={items}/>
+                    </div>
+                    <div className='underline'></div>
+                    <div className="">
                     <ClosedTasks data={items} />
                     </div>
                 </div>
