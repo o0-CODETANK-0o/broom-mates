@@ -19,7 +19,7 @@ class RegisterWG1 extends React.Component {
     return (
     <div className="redux-form-elements">
       <h1 className="text">{label}</h1>
-      <input className="input" {...input} autoComplete="off"/>
+      <input className="input input-green text" {...input} autoComplete="off"/>
       {this.renderError(meta)}
     </div>
     )
@@ -40,7 +40,7 @@ class RegisterWG1 extends React.Component {
 
         <div className="content">
           <form onSubmit={this.props.handleSubmit} >
-              <Field name="houseName" component={this.renderInput} label="CHOOSE A WG NAME"/>
+              <Field name="houseName" component={this.renderInput} label="CHOOSE A NAME FOR YOUR WG"/>
               <Field name="email" type="email"  validate={email} component={this.renderInput} label="ENTER ADMIN EMAIL"/>
             <div>
               <button type="submit" className="next input input-green">NEXT</button>
