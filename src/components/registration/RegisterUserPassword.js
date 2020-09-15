@@ -6,9 +6,6 @@ import { Field, reduxForm } from 'redux-form';
 
 const RegisterUserPassword = (props) => {
 
-    const [email, setEmail] = useState('');
-    console.log(`password ${email}`);
-
     return (
     <div className="border">
         <div className="header">
@@ -27,24 +24,18 @@ const RegisterUserPassword = (props) => {
                 onSubmit={props.handleSubmit}
             >
                 <h2 className='text'>CHOOSE PASSWORD</h2>
-                <input
+                <Field
+                    component='input'
                     type='password'
                     name='password'
                     className='input input-green text'
-                    onChange={(e) => {
-                    e.preventDefault();
-                    setEmail(e.target.value);
-                    }}
                 />
                 <h2 className='text'>RE-ENTER PASSWORD</h2>
-                <input
+                <Field
+                    component='input'
                     type='password'
                     name='second-password'
                     className='input input-green text'
-                    onChange={(e) => {
-                    e.preventDefault();
-                    setEmail(e.target.value);
-                    }}
                 />
                 <button type="submit" className="next input input-green">SUBMIT</button>
                 <button type="button" className="next input input-green">BACK</button>
@@ -58,4 +49,8 @@ const RegisterUserPassword = (props) => {
     )
 };
 
-export default RegisterUserPassword;
+export default reduxForm({
+    form: 'createWG',
+    destroyOnUnmount: false,
+    forceUnregisterOnUnmount: true
+  })(RegisterUserPassword);

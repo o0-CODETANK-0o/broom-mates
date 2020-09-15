@@ -68,7 +68,7 @@ const Caro = () => {
         className="goright direction input input-green goArrow"
         onClick={goRight}
       >
-        &#62; 	
+      &#62; 	
       </button>
     </div>
   );

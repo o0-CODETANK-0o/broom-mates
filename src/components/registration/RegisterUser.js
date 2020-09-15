@@ -5,20 +5,22 @@ import { useSelector, useDispatch } from 'react-redux';
 import { genderAction } from '../../actions/genderAction';
 import { resetCounter } from '../../actions/avatarAction';
 import { resetCaro } from '../../actions/xAction';
+import { Field, reduxForm } from 'redux-form';
+
 
 import registerUserNameAction from '../../actions/registerUserNameAction';
 
-const RegisterUser = () => {
+const RegisterUser = (props) => {
   let currentGender = useSelector(
     (state) => state.genderReducer.currentGender
   );
 
-  const currentAvatar = useSelector(
-    (state) =>
-      state.genderReducer[currentGender][
-        state.avatarReducer.counter
-      ]
-  );
+  // const currentAvatar = useSelector(
+  //   (state) =>
+  //     state.genderReducer[currentGender][
+  //       state.avatarReducer.counter
+  //     ]
+  // );
 
   const dispatch = useDispatch();
 
@@ -30,22 +32,21 @@ const RegisterUser = () => {
     dispatch(resetCaro());
   };
 
-  let newName;
-  const onChange = (e) => {
-    e.preventDefault();
+  // let newName;
+  // const onChange = (e) => {
+  //   e.preventDefault();
+  //   newName = e.target.value;
+  // };
 
-    newName = e.target.value;
-  };
-
-  const onSubmit = (e, onChange) => {
-    e.preventDefault();
-
-    dispatch(registerUserNameAction(newName));
-  };
+  // const onSubmit = (e, onChange) => {
+  //   e.preventDefault();
+  //   dispatch(registerUserNameAction(newName));
+  // };
 
   const clearAll = (e, onChange) => {
     onChange((e.target.value = ''));
   };
+
 
   return (
     <div className="border">
@@ -61,17 +62,18 @@ const RegisterUser = () => {
       </div>
 
       <div className="content ">
-        <form>
+        <form onSubmit={props.handleSubmit}>
           <h2 className="text">name</h2>
-          <input
+          <Field
+            component="input"
             type="text"
             name="name"
             className="input input-green text"
-            onChange={onChange}
+            // onChange={onChange}
           />
           <h2 className="text">type</h2>
-          <select
-            type="select"
+          <Field
+            component="select"
             name="gender"
             className="input input-green text "
             onChange={pickGender}
@@ -79,14 +81,14 @@ const RegisterUser = () => {
             <option value="human">human</option>
             <option value="drag">drag</option>
             <option value="bots">bots</option>
-          </select>
+          </Field>
 
           <Caro />
 
           <button
             type="submit"
             className="input input-green"
-            onClick={onSubmit}
+
           >
             <p className="text">create</p>
           </button>
@@ -108,4 +110,8 @@ const RegisterUser = () => {
   );
 };
 
-export default RegisterUser;
+export default reduxForm({
+  form: 'createWG',
+  destroyOnUnmount: false,
+  forceUnregisterOnUnmount: true
+})(RegisterUser);

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import RegisterWG1 from './RegisterWG1';
 import TasksManager from './TasksManager';
 import Modal from '../layout/Modal';
 import { setModal } from './../../actions/modalActions';
 import RegisterUser from './RegisterUser';
+import RegisterUserPassword from './RegisterUserPassword';
 
 class RegisterWG extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class RegisterWG extends Component {
 
   nextPage = () => {
     this.setState({ page: this.state.page + 1 })
+    console.log('values for backend: ', this.props.data)
   }
 
   previousPage = () => {
@@ -28,21 +30,27 @@ class RegisterWG extends Component {
   }
 
   onSubmit = (e) => {
-    
     console.log('values for backend: ', this.props.data)
     //values for backend are here PLAMEN
   }
 
+
+  finalPage = () => {
+    console.log('final form data', this.props.data)
+    console.log('finale state', this.props.state)
+  };
+
   render() {
-    
+  
     const { page } = this.state;
 
     return (
       <div>
         {this.props.modalData.show && <Modal yesButton={'YES'} noButton={'NO'} />}
-        {page === 1 && <RegisterWG1 onSubmit={() => this.openModal(this.nextPage, `You want to keep the ID\n' + "${this.props.data.values.houseName}"?\n' + And this email address?\n ${this.props.data.values.houseName}`)}/>}
+        {page === 1 && <RegisterWG1 onSubmit={() => this.openModal(this.nextPage, `You want to keep the ID: "${this.props.data.values.houseName}" and the email address: ${this.props.data.values.email}?`)}/>}
         {page === 2 && <TasksManager previousPage={this.previousPage} onSubmit={() => this.openModal(this.nextPage, 'You want to keep the selected tasks?') }/>}
-        {page === 3 && <RegisterUser />}
+        {page === 3 && <RegisterUser onSubmit={() => this.nextPage()} />}
+        {page === 4 && <RegisterUserPassword onSubmit={() => this.openModal(this.finalPage, 'You want to keep this character?')} />}
       </div>
     )
   }
@@ -50,7 +58,7 @@ class RegisterWG extends Component {
 
 
 function mapStateToProps(state) {
-  return {data: state.form.createWG, modalData: state.modalReducer}
+  return {data: state.form.createWG, modalData: state.modalReducer, state}
 };
 
 export default connect(mapStateToProps, { setModal })(RegisterWG);
