@@ -2,9 +2,28 @@ import React, { useState } from 'react';
 import Speaker from '../layout/Speaker';
 import { Field, reduxForm } from 'redux-form';
 
-
-
 const RegisterUserPassword = (props) => {
+
+   
+  const renderError = ({ error, touched}) => {
+        if(touched && error ) {
+            return (
+                <div>
+                <div>{error}</div>
+                </div>
+            );
+        }
+    }
+
+    const renderInput = ({input, label, meta}) => {
+        return (
+        <div className="redux-form-elements">
+          <h1 className="text">{label}</h1>
+          <input className="input input-green" {...input} autoComplete="off"/>
+          {renderError(meta)}
+        </div>
+        )
+    }
 
     return (
     <div className="border">
@@ -23,18 +42,18 @@ const RegisterUserPassword = (props) => {
             <form
                 onSubmit={props.handleSubmit}
             >
-                <h2 className='text'>CHOOSE PASSWORD</h2>
                 <Field
-                    component='input'
+                    label="CHOOSE A PASSWORD"
+                    component={renderInput}
                     type='password'
-                    name='password'
+                    name='passwordOne'
                     className='input input-green text'
                 />
-                <h2 className='text'>RE-ENTER PASSWORD</h2>
                 <Field
-                    component='input'
+                    label="RE-ENTER THE PASSWORD"
+                    component={renderInput}
                     type='password'
-                    name='second-password'
+                    name='passwordTwo'
                     className='input input-green text'
                 />
                 <button type="submit" className="next input input-green">SUBMIT</button>
@@ -49,8 +68,19 @@ const RegisterUserPassword = (props) => {
     )
 };
 
+const validate = (formValues) => {
+    const errors= {};
+    
+    if(formValues.passwordOne !== formValues.passwordTwo) {
+      errors.houseName = "THE PASSWORDS DO NOT MATCH" 
+    }
+    return errors;
+  };
+  
+
 export default reduxForm({
     form: 'createWG',
     destroyOnUnmount: false,
-    forceUnregisterOnUnmount: true
+    forceUnregisterOnUnmount: true,
+    validate
   })(RegisterUserPassword);

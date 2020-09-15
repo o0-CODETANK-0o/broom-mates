@@ -50,7 +50,7 @@ class RegisterWG extends Component {
         {page === 1 && <RegisterWG1 onSubmit={() => this.openModal(this.nextPage, `You want to keep the ID: "${this.props.data.values.houseName}" and the email address: ${this.props.data.values.email}?`)}/>}
         {page === 2 && <TasksManager previousPage={this.previousPage} onSubmit={() => this.openModal(this.nextPage, 'You want to keep the selected tasks?') }/>}
         {page === 3 && <RegisterUser onSubmit={() => this.nextPage()} />}
-        {page === 4 && <RegisterUserPassword onSubmit={() => this.openModal(this.finalPage, 'You want to keep this character?')} />}
+        {page === 4 && <RegisterUserPassword onSubmit={() => this.openModal(this.finalPage, `You want to keep ${this.props.data.values.name}?`)} />}
       </div>
     )
   }
