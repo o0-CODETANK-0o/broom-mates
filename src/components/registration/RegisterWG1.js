@@ -18,25 +18,30 @@ class RegisterWG1 extends React.Component {
   renderInput = ({input, label, meta}) => {
     return (
     <div className="redux-form-elements">
-      <label>{label}</label>
-      <input className="input" {...input} autoComplete="off"/>
+      <h1 className="text">{label}</h1>
+      <input className="input input-green text" {...input} autoComplete="off"/>
       {this.renderError(meta)}
     </div>
     )
   }
 
   render() {
+
     return (
       <div className="border">
-        <div className='header '>
-          <h1 className='text'>create a wg</h1>
-          <div className='underline'></div>
-          <div className='underline'></div>
+        <div className="header">
+            <div className="header-register-user">
+            <h1 className="text">CREATE WG</h1>
+            </div>
+            <div>
+            <div className="underline"></div>
+            <div className="underline"></div>
+            </div>
         </div>
 
         <div className="content">
           <form onSubmit={this.props.handleSubmit} >
-              <Field name="houseName" component={this.renderInput} label="CHOOSE A WG NAME"/>
+              <Field name="houseName" component={this.renderInput} label="CHOOSE A NAME FOR YOUR WG"/>
               <Field name="email" type="email"  validate={email} component={this.renderInput} label="ENTER ADMIN EMAIL"/>
             <div>
               <button type="submit" className="next input input-green">NEXT</button>

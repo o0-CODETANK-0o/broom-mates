@@ -3,7 +3,6 @@ import OpenTasks from '../IndividualValidation/OpenTasks';
 import ClosedTasks from '../IndividualValidation/ClosedTasks';
 import Speaker from '../Speaker';
 import { useSelector } from 'react-redux';
-import Modal from '../Modal';
 
 const IndividualValidation = () => {
 

@@ -61,15 +61,15 @@ const Caro = () => {
 
   return (
     <div className="carousel-container" >
-      <button className="input input-green goArrow" onClick={goLeft}>
-      &larr;
+      <button className="goLeft direction input input-green goArrow" onClick={goLeft}>
+      &#60;
       </button>
       <div className="carousel">{carouselJSX}</div>
       <button
         className="input input-green goArrow"
         onClick={goRight}
       >
-        &rarr;
+      &#62; 	
       </button>
     </div>
   );
