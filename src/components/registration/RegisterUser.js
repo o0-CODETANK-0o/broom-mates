@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Speaker from '../layout/Speaker';
 import Caro from './Caro';
 import { useSelector, useDispatch } from 'react-redux';
 import { genderAction } from '../../actions/genderAction';
 import { resetCounter } from '../../actions/avatarAction';
 import { resetCaro } from '../../actions/xAction';
-
+import registerUserAction from "../../actions/registerUserAction"
 import registerUserNameAction from '../../actions/registerUserNameAction';
+import { useParams } from 'react-router-dom';
 
 const RegisterUser = () => {
+
+const token=useParams().token
+
+
+
   let currentGender = useSelector(
     (state) => state.genderReducer.currentGender
   );
@@ -21,48 +27,19 @@ const RegisterUser = () => {
   );
 
 
-// let name=useSelector(state=>state.registerUserNameReducer.name)
-// let avatar=useSelector(state=>state.avatarReducer.saved)
-// let type=useSelector(state=>state.genderReducer.currentGender)
+let [name,setName]=useState("")
 
 
 
-// if(name){
-//   console.log(name)
-// }
-// if(avatar){
-//   console.log(avatar)
-// }
-// if(type){
-//   console.log(type)
-// }
+
 
   const dispatch = useDispatch();
 
-  const pickGender = (e) => {
-    let pickedGender = e.target.value;
-    dispatch(genderAction(pickedGender));
-    //We need to roll back to the first image of each set of images
-    dispatch(resetCounter());
-    dispatch(resetCaro());
-  };
+  
 
-  let newName;
-  const onChange = (e) => {
-    e.preventDefault();
 
-    newName = e.target.value;
-  };
 
-  const onSubmit = (e, onChange) => {
-    e.preventDefault();
 
-    dispatch(registerUserNameAction(newName));
-  };
-
-  const clearAll = (e, onChange) => {
-    onChange((e.target.value = ''));
-  };
 
   return (
     <div className="border">
@@ -78,20 +55,22 @@ const RegisterUser = () => {
       </div>
 
       <div className="content ">
-        <form>
+        <form onSubmit={(e)=>{e.preventDefault(); dispatch(registerUserAction(name,token,currentAvatar))}}>
           <h2 className="text">name</h2>
           <input
             type="text"
             name="name"
+            value={name}
             className="input input-green text"
-            onChange={onChange}
+            onChange={(e)=>{e.preventDefault(); setName(e.target.value)}}
           />
           <h2 className="text">type</h2>
           <select
             type="select"
             name="gender"
             className="input input-green text "
-            onChange={pickGender}
+            onChange={(e)=>{dispatch(genderAction(e.target.value)); dispatch(resetCounter());
+              dispatch(resetCaro())}}
           >
             <option value="human">human</option>
             <option value="drag">drag</option>
@@ -103,13 +82,12 @@ const RegisterUser = () => {
           <button
             type="submit"
             className="input input-green"
-            onClick={onSubmit}
-          >
+                   >
             <p className="text">create</p>
           </button>
           <button
             className="input input-green"
-            onClick={clearAll}
+            onClick={ ()=>setName("")}
           >
             <p className="text">clear</p>
           </button>

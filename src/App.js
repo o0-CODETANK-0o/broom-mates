@@ -26,7 +26,7 @@ import IndividualValidation from './components/layout/IndividualValidation/Indiv
 import TaskProgress from './components/layout/TaskProgress';
 
 
-import InviteUser from './components/registration/InviteUser';
+
 
 function App() {
   return (
@@ -76,7 +76,7 @@ function App() {
         <Route path='/' component={Home} exact />
         <Route path='/home' component={Home} exact />
         <Route path='/registerwg' component={RegisterWG} />
-        <Route exact path='/registeruser' component={RegisterUser} />
+        <Route path='/registeruser/:token' component={RegisterUser} />
         <Route exact path='/inviteuser' component={InviteUser} />
         <Route exact path='/members4' component={Members} />
         <Route exact path='/members2' component={Members2} />
