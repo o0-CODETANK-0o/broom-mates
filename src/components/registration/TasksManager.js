@@ -4,7 +4,8 @@ import Speaker from './../layout/Speaker';
 
 
 const TasksManager = (props) => {
-  const { previousPage } = props
+  
+  const { previousPage } = props;
 
   // props.nameData.values.houseName
 

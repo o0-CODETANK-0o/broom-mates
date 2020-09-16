@@ -221,18 +221,35 @@ label {
   justify-content: center;
 }
 
-.user {
-  margin: 1rem;
-}
+// .user {
+//   margin: 1rem;
+// }
 
 .details {
   margin-bottom: 1rem;
 }
 
-.user-header {
+// .user-header {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-evenly;
+// }
+
+.player-profile-content {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  img {
+    width: 100%;
+    padding: 20px;
+    margin-right: 4vh;
+  }
+  .player-status-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30vh;
+  }
 }
 
 .userdetail-text {

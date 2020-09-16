@@ -26,6 +26,7 @@ class RegisterWG1 extends React.Component {
   }
 
   render() {
+
     return (
       <div className="border">
         <div className="header">
