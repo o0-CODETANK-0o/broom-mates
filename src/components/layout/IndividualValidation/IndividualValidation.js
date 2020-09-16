@@ -23,10 +23,6 @@ const IndividualValidation = () => {
                 <ClosedTasks data={items} />
             </div>
     
-            <div className='footer'>
-                <Speaker />
-            </div>
-    
         </div>
     )
 }
