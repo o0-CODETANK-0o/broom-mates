@@ -20,13 +20,12 @@ import Shop from './components/layout/Shop';
 import TasksManager from './components/registration/TasksManager';
 import InviteUser from './components/registration/InviteUser';
 import CharacterTasks from './components/characterTasks/CharacterTasks';
-import TaskInProgress from './components/characterTasks/TaskInProgress';
+import Hub from './components/hub/Hub';
 // THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES
 import IndividualValidation from './components/layout/IndividualValidation/IndividualValidation';
-import TaskProgress from './components/layout/TaskProgress';
 
 
-import InviteUser from './components/registration/InviteUser';
+// import InviteUser from './components/registration/InviteUser';
 
 function App() {
   return (
@@ -86,11 +85,10 @@ function App() {
         <Route exact path='/shop' component={Shop} />
         <Route exact path='/TasksManager' component={TasksManager} />
         <Route exact path='/characterTasks' component={CharacterTasks} />
-        <Route exact path='/TaskInProgress' component={TaskInProgress} />
         <Route exact path='/individualvalidation' component={IndividualValidation} />
-        <Route exact path='/taskprogress' component={TaskProgress} />
         <Route exact path='/inviteuser' component={InviteUser} />
 
+        <Route exact path='/Hub' component={Hub} />
         {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
 
         <Route exact path='/login' component={Login} />

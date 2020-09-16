@@ -91,9 +91,6 @@ html {
   align-items: center;
   justify-content: center;
   height: 66vh;
-  // justify-content: flex-start;
-
-  // height: 30vh;
 }
 
 .underline {
@@ -120,6 +117,7 @@ html {
   border-radius: 20px;
   margin: 1rem;
   padding: 1rem;
+  height: 100vh;
 }
 .frame {
   background: var(--purple);
@@ -276,22 +274,37 @@ form{
 
 //CHARACTER TASKS
 
-.image {
-  height: 100px;
-  width: 100px;
-}
 
-.charInfos {
-  display: flex;
-  justify-content: space-evenly;
-}
 
-.charDetails {
+
+
+//HUB
+.avatar-card-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  height: 20vh;
+  margin: 50px;
+  border: 5px solid var(--green);
+  border-radius: 25px;
+  img {
+    padding: 5px;
+  }
+  h4 {
+    padding-bottom: 5px;
+  }
+  p {
+    padding-bottom: 5px;
+  }
 }
 
-.task-item {
+.all-chars {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+.item {
+  flex-grow: 2;
 }
