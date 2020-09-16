@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-
+import {Link} from "react-router-dom"
 
 const TasksManager = (props) => {
   const { previousPage } = props
@@ -77,7 +77,9 @@ const TasksManager = (props) => {
 
       <div>
       <button type="button" className="input" onClick={previousPage}>Previous</button>
-      <button type="submit" className="input" >Submit</button>        
+      <Link to="inviteuser">
+      <button type="submit" className="input" >Submit</button>   
+      </Link>    
       </div>
     </form>
   )

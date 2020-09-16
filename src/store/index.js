@@ -1,7 +1,7 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore,  applyMiddleware } from 'redux'
 import rootReducer from '../reducers';
-
-export const store = createStore(rootReducer);
+import thunk from "redux-thunk"
+export const store = createStore(rootReducer,applyMiddleware(thunk));
 
 // import { createStore,  applyMiddleware } from 'redux'
 // import { reducer as formReducer } from 'redux-form'
