@@ -15,7 +15,7 @@ const InviteUser = () => {
     <div className='border'>
       <div className='header'>
         <div className='header-register-user'>
-          u <h1 className='text'>character</h1>
+          <h1 className='text'>character</h1>
           <h1 className='text'>creation</h1>
         </div>
         <div>

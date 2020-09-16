@@ -26,9 +26,6 @@ import IndividualValidation from './components/layout/IndividualValidation/Indiv
 import TaskProgress from './components/layout/TaskProgress';
 import RegisterUserPassword from './components/registration/RegisterUserPassword';
 
-
-import InviteUser from './components/registration/InviteUser';
-
 function App() {
   return (
     <div className='App'>
