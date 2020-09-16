@@ -56,7 +56,6 @@ class RegisterWG extends Component {
   }
 }
 
-
 function mapStateToProps(state) {
   return {data: state.form.createWG, modalData: state.modalReducer, state}
 };

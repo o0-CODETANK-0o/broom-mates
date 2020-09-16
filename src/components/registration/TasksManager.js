@@ -13,8 +13,8 @@ const TasksManager = (props) => {
 
       <div className="header">
         <div className="header-register-user">
-          <h1 className="text">TASKS</h1>
-          <h1 className="text">SELECTION</h1>
+          <h1 className="text">{(props.nameData && props.nameData.values.houseName ? props.nameData.values.houseName : 'TASK SELECTION' )}</h1>
+          {/* <h1 className="text">SELECTION</h1> */}
         </div>
         <div>
           <div className="underline"></div>
@@ -128,9 +128,9 @@ const TasksManager = (props) => {
 }
 
 export default reduxForm({
-  form: 'createWG',  //Form name is same
+  form: 'createWG',  
   destroyOnUnmount: false,
-  forceUnregisterOnUnmount: true,  // <------ unregister fields on unmount
+  forceUnregisterOnUnmount: true,  
 })(TasksManager)
 
 

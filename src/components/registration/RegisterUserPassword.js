@@ -1,34 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Speaker from '../layout/Speaker';
 import { Field, reduxForm } from 'redux-form';
-import { useSelector } from 'react-redux';
 
-const RegisterUserPassword = (props) => {
-
-    const [field, setField] = useState('');
-    const [secondField, setSecondField] = useState('');
-
-    // console.log('first filed', field, 'second filed', secondField);
+class RegisterUserPassword extends React.Component {
    
-//   const renderError = ({ error, touched}) => {
-//         if(touched && error ) {
-//             return (
-//                 <div>
-//                 <div>{error}</div>
-//                 </div>
-//             );
-//         }
-//     }
+    renderError = ({ error, touched}) => {
+        if(touched && error ) {
+            return (
+                <div>
+                <div>{error}</div>
+                </div>
+            );
+        }
+    }
 
-//     const renderInput = ({input, label, meta}) => {
-//         return (
-//         <div className="redux-form-elements">
-//           <h1 className="text">{label}</h1>
-//           <input type='password' className="input input-green" {...input} autoComplete="off"/>
-//           {renderError(meta)}
-//         </div>
-//         )
-//     }
+    renderInput = ({input, label, meta}) => {
+        return (
+        <div className="redux-form-elements">
+          <h1 className="text">{label}</h1>
+          <input type='password' className="input input-green" {...input} autoComplete="off"/>
+          {this.renderError(meta)}
+        </div>
+        )
+    }
+
+    render() {
 
     return (
     <div className="border">
@@ -43,23 +39,21 @@ const RegisterUserPassword = (props) => {
             </div>
         </div>
 
-        <div className="content ">
+        <div className="content">
             <form
-                onSubmit={props.handleSubmit}
+                onSubmit={this.props.handleSubmit}
             >
                 <Field
                     label="CHOOSE USER PASSWORD"
-                    component='input'
+                    component={this.renderInput}
                     name='passwordOne'
                     className='input input-green text'
-                    onChange={(e) => setField(e.target.value)}
                 />
                 <Field
                     label="RE-ENTER PASSWORD"
-                    component='input'
+                    component={this.renderInput}
                     name='passwordTwo'
                     className='input input-green text'
-                    onChange={(e) => setSecondField(e.target.value)}
                 />
                 <button type="submit" className="next input input-green">SUBMIT</button>
                 <button type="button" className="next input input-green">BACK</button>
@@ -71,21 +65,23 @@ const RegisterUserPassword = (props) => {
         </div>
     </div>
     )
+}
 };
 
-// const validate = (formValues) => {
-//     const errors= {};
+const validate = (formValues) => {
+    const errors= {};
     
-//     if(formValues.passwordOne !== formValues.passwordTwo) {
-//       errors.passwordTwo = "THE PASSWORDS DO NOT MATCH" 
-//     }
-//     return errors;
-//   };
+    if(formValues.passwordOne !== formValues.passwordTwo) {
+      errors.passwordTwo = "THE PASSWORDS DO NOT MATCH" 
+    }
+    return errors;
+  };
 
   
 
 export default reduxForm({
     form: 'createWG',
     destroyOnUnmount: false,
-    forceUnregisterOnUnmount: true
+    forceUnregisterOnUnmount: true,
+    validate
   })(RegisterUserPassword);
