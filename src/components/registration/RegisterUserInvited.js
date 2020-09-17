@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 
 import Modal from '../layout/Modal';
 import { setModal } from './../../actions/modalActions';
 import RegisterUser from './RegisterUser';
 import RegisterUserPassword from './RegisterUserPassword';
-import registerUserAction from '../../actions/registerUserAction';
+
 
 class RegisterUserInvited extends Component {
   constructor(props) {
