@@ -1,5 +1,6 @@
 
  const registerUserAction = (name,token,currentAvatar) => {
+   console.log("im here")
    console.log(token)
   return async (dispatch) => {
     const contact = await postContact(name,token,currentAvatar);

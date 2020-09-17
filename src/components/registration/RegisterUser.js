@@ -7,7 +7,7 @@ import { resetCounter } from '../../actions/avatarAction';
 import { resetCaro } from '../../actions/xAction';
 import registerUserAction from "../../actions/registerUserAction"
 import registerUserNameAction from '../../actions/registerUserNameAction';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const RegisterUser = () => {
 
@@ -78,13 +78,14 @@ let [name,setName]=useState("")
           </select>
 
           <Caro />
-
+<Link to="registerUserPassword">
           <button
             type="submit"
             className="input input-green"
-                   >
+                  >
             <p className="text">create</p>
           </button>
+          </Link>
           <button
             className="input input-green"
             onClick={ ()=>setName("")}
