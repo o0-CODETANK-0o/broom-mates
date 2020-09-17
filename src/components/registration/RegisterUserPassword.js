@@ -58,7 +58,7 @@ class RegisterUserPassword extends React.Component {
                     className='input input-green text'
                 />
                 <button type="submit" className="next input input-green">SUBMIT</button>
-                <button onClick={previousPage} type="button" className="next input input-green">BACK</button>
+                <button onClick={this.previousPage} type="button" className="next input input-green">BACK</button>
             </form>
         </div>
 

@@ -39,22 +39,16 @@ function App() {
             <div className='content'>
               <Link to='/RegisterWG'>
                 <button className='input input-purple '>
-                  <p className='text'>create wg</p>
+                  <p className='text'>sign up</p>
                 </button>
               </Link>
 
               <Link to='/login'>
                 <button className='input input-purple '>
-                  <p className='text'>continue</p>
+                  <p className='text'>log in</p>
                 </button>
               </Link>
 
-              {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
-              <Link to='/RegisterUser'>
-                <button className='input input-purple '>
-                  <p className='text'>character</p>
-                </button>
-              </Link>
               {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
 
               <Link to='/credits'>

@@ -7,6 +7,8 @@ const TasksManager = (props) => {
   
   const { previousPage } = props;
 
+  console.log('previous page', previousPage)
+
   // props.nameData.values.houseName
 
   return (
