@@ -18,7 +18,6 @@ class RegisterWG extends Component {
 
   nextPage = () => {
     this.setState({ page: this.state.page + 1 });
-    console.log("values for backend: ", this.props.data);
   };
 
   previousPage = () => {
