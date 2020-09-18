@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import Modal from '../layout/Modal';
 import { setModal } from './../../actions/modalActions';
 import RegisterUser from './RegisterUser';
 import RegisterUserPassword from './RegisterUserPassword';
 import axios from "axios";
-
-
 
 class RegisterUserInvited extends Component {
   constructor(props) {
