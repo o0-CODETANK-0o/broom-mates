@@ -3,9 +3,9 @@ import OpenTasks from '../layout/IndividualValidation/OpenTasks';
 import ClosedTasks from '../layout/IndividualValidation/ClosedTasks';
 import { useSelector } from 'react-redux';
 import Modal from '../layout/Modal';
-
-
-import Char from './pixel.jpg';
+import { Link } from 'react-router-dom';
+import Speaker from '../layout/Speaker';
+import Char from '../../assets/male-portraits/baby.png';
 
 const CharacterTasks = () => {
     
@@ -13,24 +13,21 @@ const CharacterTasks = () => {
 
 
     return (
-    <div>
-        <div className="">
+    <div className="border">
+        <div className="header-register-user ">
             <h1>Julien</h1>
-            <img src={Char} className="image" alt="character" />
+            <img src={Char} className=" input input-green text " alt="character" />
         </div>
 
-        <div className='content'>
+        <div className=''>
                 { modalData.show && <Modal /> }
                 <div>
                     <div className='underline'></div>
-                    <h2>WEEKLY TASKS</h2>
+                    <h1>WEEKLY TASKS</h1>
                     <div className='underline'></div>
 
-                    <div className="">
+                    <div className="tasks">
                     <OpenTasks data={items}/>
-                    </div>
-                    <div className='underline'></div>
-                    <div className="">
                     <ClosedTasks data={items} />
                     </div>
 
@@ -42,19 +39,23 @@ const CharacterTasks = () => {
                     <h1>MONTHLY TASKS</h1>
                     <div className='underline'></div>
 
-                    <div className="">
-                    <OpenTasks data={items}/>
-                    </div>
-                    <div className='underline'></div>
-                    <div className="">
-                    <ClosedTasks data={items} />
+                    <div className="tasks">
+                    {/* <OpenTasks data={items}/>
+                    <ClosedTasks data={items} /> */}
                     </div>
                 </div>
             </div>
     
-               
-            <button className='input input-purple '>BACK</button>
-    
+            <Link to='Hub'>
+                <button className='input input-green '>
+                    BACK
+                </button>
+            </Link>
+
+        <div className="footer">
+            <Speaker />
+        </div>
+
     </div>
     )
 
