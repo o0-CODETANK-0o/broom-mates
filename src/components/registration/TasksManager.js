@@ -74,8 +74,8 @@ const TasksManager = (props) => {
             </div>
           </div>
 
-          <div>
-            <h2>bathroom</h2>
+          <div className="individual-task-container">
+            <h2>BATHROOM</h2>
             <div>
               <label><Field name="bathroom.mopFloor" component="input" type="checkbox" value="mop the floor"/> mop the floor</label>
               <label><Field name="bathroom.cleanMirror" component="input" type="checkbox" value="clean the mirror"/> clean the mirror</label>
@@ -91,8 +91,8 @@ const TasksManager = (props) => {
             </div>
           </div>
 
-          <div>
-            <h2>living-room</h2>
+          <div className="individual-task-container">
+            <h2>LIVING-ROOM</h2>
             <div>
               <label><Field name="livingRoom.mopFloor" component="input" type="checkbox" value="mop the floor"/> mop the floor</label>
               <label><Field name="livingRoom.cleanWindows" component="input" type="checkbox" value="clean the windows"/> clean the windows</label>
@@ -104,8 +104,8 @@ const TasksManager = (props) => {
             </div>
           </div>
 
-          <div>
-            <h2>main entrance/corridor</h2>
+          <div className="individual-task-container">
+            <h2>MAIN ENTRANCE/CORRIDOR</h2>
             <div>
               <label><Field name="entrance.mopFloor" component="input" type="checkbox" value="mop the floor"/> mop the floor</label>
               <label><Field name="entrance.changeCarpet" component="input" type="checkbox" value="clean the windows"/>change the carpet</label>
@@ -114,12 +114,14 @@ const TasksManager = (props) => {
               <label><Field name="entrance.removeSpiders" component="input" type="checkbox" value="remove spiderwebs from the ceiling"/> remove spiderwebs from the ceiling</label>
             </div>
           </div>
-        </section>
 
-        <div className="tasks-form-button">
+          <div className="tasks-form-button">
         <button type="submit" className="input input-green">SUBMIT</button>        
         <button type="button" className="input input-green" onClick={previousPage}>BACK</button>
         </div>
+
+        </section>
+
       </form>
 
       <div className='footer'>
