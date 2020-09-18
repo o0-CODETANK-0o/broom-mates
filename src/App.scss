@@ -280,20 +280,18 @@ form{
 
 //HUB
 .avatar-card-container {
-  display: flex;
-  flex-direction: column;
-  height: 20vh;
-  margin: 50px;
+  height: 25vh;
+  margin: 30px;
   border: 5px solid var(--green);
   border-radius: 25px;
   img {
-    padding: 5px;
+    padding: 5%;
   }
   h4 {
-    padding-bottom: 5px;
+    padding-bottom: 5%;
   }
   p {
-    padding-bottom: 5px;
+    padding-bottom: 5%;
   }
 }
 
@@ -304,7 +302,6 @@ form{
 }
 
 
-
-.item {
-  flex-grow: 2;
+.hub {
+  
 }

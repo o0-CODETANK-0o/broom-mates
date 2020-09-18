@@ -8,8 +8,8 @@ const HubChar = (props) => {
 
     let allChar = data.map((char) => {
         return (
-            <div className="avatar-card-container ">
-                <img src={char.avatar} alt={char.name}/>
+            <div className="avatar-card-container">
+                <img src={char.avatar} alt={char.name} className=""/>
                 <h4>{char.name}</h4>
                 <p>{char.xp}XP</p>
                 <p>{char.status}</p>

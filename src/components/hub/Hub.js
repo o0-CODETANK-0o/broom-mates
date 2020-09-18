@@ -48,21 +48,21 @@ const Hub = () => {
             </div>
 
             <div className="content">
-                <div className="">
+                <div className="hub">
                     <HubChar data={Characters}/>
                 
                 </div>
 
-                <div>
+                <div className="">
                     <Link to='/TasksManager'>
                         <button className='input input-green '>
                         <span className='text'>edit your house</span>
                         </button>
                     </Link>
                         
-                        <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/GEkr5G80z-o">
+                    <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/GEkr5G80z-o">
                         <button className='input input-green ' >ENTER THE ARENA</button>
-                        </a>
+                    </a>
 
                     <div className="footer">
                         <Speaker />
