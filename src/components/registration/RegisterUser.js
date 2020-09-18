@@ -65,6 +65,7 @@ const RegisterUser = (props) => {
         <form onSubmit={props.handleSubmit}>
           <h2 className="text">name</h2>
           <Field
+            autocomplete="off"
             component="input"
             type="text"
             name="name"
@@ -73,6 +74,7 @@ const RegisterUser = (props) => {
           />
           <h2 className="text">type</h2>
           <Field
+            autocomplete="off"
             component="select"
             name="gender"
             className="input input-green text "
