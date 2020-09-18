@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 import RegisterWG1 from "./RegisterWG1";
 import TasksManager from "./TasksManager";
 import Modal from "../layout/Modal";

@@ -8,6 +8,7 @@ import './App.scss';
 // COMPONENTS
 import Home from './components/Home';
 import RegisterWG from './components/registration/RegisterWG';
+import RegisterInvitedUser from './components/registration/RegisterInvitedUser';
 import Login from './components/layout/Login';
 import Credits from './components/layout/Credits';
 import Members from './components/layout/Members';
@@ -68,7 +69,7 @@ function App() {
         <Route path='/' component={Home} exact />
         <Route path='/home' component={Home} exact />
         <Route path='/registerwg' component={RegisterWG} />
-        <Route exact path='/registeruser' component={RegisterUser} />
+        <Route exact path='/registeruser' component={RegisterInvitedUser} />
         <Route exact path='/inviteuser' component={InviteUser} />
         <Route exact path='/members4' component={Members} />
         <Route exact path='/members2' component={Members2} />
@@ -76,12 +77,13 @@ function App() {
         <Route exact path='/validateprogress' component={ValidateProgress} />
         <Route exact path='/inventory' component={Inventory} />
         <Route exact path='/shop' component={Shop} />
-        <Route exact path='/TasksManager' component={TasksManager} />
+        {/* <Route exact path='/TasksManager' component={TasksManager} /> */}
         <Route exact path='/characterTasks' component={CharacterTasks} />
         <Route exact path='/TaskInProgress' component={TaskInProgress} />
         <Route exact path='/individualvalidation' component={IndividualValidation} />
         <Route exact path='/taskprogress' component={TaskProgress} />
-        <Route exact path='/registeruserpassword' component={RegisterUserPassword} />
+        {/* <Route exact path='/registeruserpassword' component={RegisterUserPassword} /> */}
+        {/* <Route exact path='/registerinviteduser' component={RegisterInvitedUser} /> */}
 
         {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
 
