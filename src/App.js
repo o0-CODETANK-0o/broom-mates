@@ -8,16 +8,17 @@ import './App.scss';
 // COMPONENTS
 import Home from './components/Home';
 import RegisterWG from './components/registration/RegisterWG';
+import RegisterInvitedUser from './components/registration/RegisterInvitedUser';
 import Login from './components/layout/Login';
 import Credits from './components/layout/Credits';
 import Members from './components/layout/Members';
 import Members2 from './components/layout/Members2';
-import RegisterUser from './components/registration/RegisterUser';
+// import RegisterUser from './components/registration/RegisterUser';
 import UserDetails from './components/layout/UserDetails';
 import ValidateProgress from './components/layout/ValidateProgress';
 import Inventory from './components/layout/Inventory';
 import Shop from './components/layout/Shop';
-import TasksManager from './components/registration/TasksManager';
+// import TasksManager from './components/registration/TasksManager';
 import InviteUser from './components/registration/InviteUser';
 import CharacterTasks from './components/characterTasks/CharacterTasks';
 import Hub from './components/hub/Hub';
@@ -71,7 +72,7 @@ function App() {
         <Route path='/' component={Home} exact />
         <Route path='/home' component={Home} exact />
         <Route path='/registerwg' component={RegisterWG} />
-        <Route exact path='/registeruser' component={RegisterUser} />
+        <Route exact path='/registeruser' component={RegisterInvitedUser} />
         <Route exact path='/inviteuser' component={InviteUser} />
         <Route exact path='/members4' component={Members} />
         <Route exact path='/members2' component={Members2} />
@@ -79,12 +80,14 @@ function App() {
         <Route exact path='/validateprogress' component={ValidateProgress} />
         <Route exact path='/inventory' component={Inventory} />
         <Route exact path='/shop' component={Shop} />
-        <Route exact path='/TasksManager' component={TasksManager} />
+        {/* <Route exact path='/TasksManager' component={TasksManager} /> */}
         <Route exact path='/characterTasks' component={CharacterTasks} />
         <Route exact path='/individualvalidation' component={IndividualValidation} />
         <Route exact path='/taskprogress' component={TaskProgress} />
         <Route exact path='/registeruserpassword' component={RegisterUserPassword} />
         <Route exact path='/inviteuser' component={InviteUser} />
+        {/* <Route exact path='/registeruserpassword' component={RegisterUserPassword} /> */}
+        {/* <Route exact path='/registerinviteduser' component={RegisterInvitedUser} /> */}
 
         <Route exact path='/Hub' component={Hub} />
         {/* THIS PART NEEDS TO BE DELETED IT IS ONLY HERE SO I CAN ACCESS THE OTHER PAGES */}
