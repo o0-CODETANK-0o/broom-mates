@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-// import Speaker from '../layout/Speaker';
+import Speaker from '../layout/Speaker';
 import {  useDispatch } from 'react-redux';
 import userInviteAction from '../../actions/userInviteAction';
+import { Link } from 'react-router-dom';
 
 const InviteUser = () => {
   const [name, setName] = useState('');
@@ -50,16 +51,18 @@ const InviteUser = () => {
               e.preventDefault();
               setEmail(e.target.value);
             }}
-          />
+          />   <Link to="members2">
           <button className='input input-green'>
+         
             <p className='text'>Invite</p>
           </button>
+          </Link>
         </form>
       </div>
 
-      {/* <div className='footer'>
+      <div className='footer'>
         <Speaker />
-      </div> */}
+      </div>
     </div>
   );
 };

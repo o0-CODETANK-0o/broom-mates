@@ -21,7 +21,7 @@ const Members2 = () => {
               <p className=' text details'>xp 375</p>
             </div>
           </Link>
-          <Link to='registeruser'>
+          <Link to='inviteuser'>
             <div className='user'>
               <AddUser />
             </div>
