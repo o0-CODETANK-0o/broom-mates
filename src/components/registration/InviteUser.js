@@ -15,8 +15,9 @@ const InviteUser = () => {
     <div className='border'>
       <div className='header'>
         <div className='header-register-user'>
-          <h1 className='text'>character</h1>
-          <h1 className='text'>creation</h1>
+          <h1 className='text'>Invite your</h1>
+          <h1 className='text'>mates</h1>
+
         </div>
         <div>
           <div className='underline'></div>

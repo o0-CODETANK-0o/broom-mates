@@ -47,8 +47,8 @@ const Hub = () => {
                 <div className='underline'></div>
             </div>
 
-            <div className="content">
-                <div className="hub">
+            <div className="content ">
+                <div className="">
                     <HubChar data={Characters}/>
                 
                 </div>
@@ -64,9 +64,11 @@ const Hub = () => {
                         <button className='input input-green ' >ENTER THE ARENA</button>
                     </a>
 
-                    <div className="footer">
-                        <Speaker />
-                    </div>
+                    
+                </div>
+
+                <div className="footer">
+                    <Speaker />
                 </div>
             </div>
         </div>

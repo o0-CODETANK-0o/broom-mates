@@ -26,7 +26,7 @@ class RegisterUserPassword extends React.Component {
 
     render() {
 
-        const { previousPage } = this.props;
+        // const { previousPage } = this.props;
 
     return (
     <div className="border">
@@ -57,6 +57,7 @@ class RegisterUserPassword extends React.Component {
                     name='passwordTwo'
                     className='input input-green text'
                 />
+                 
                 <button type="submit" className="next input input-green">SUBMIT</button>
                 <button onClick={this.previousPage} type="button" className="next input input-green">BACK</button>
             </form>

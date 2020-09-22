@@ -80,9 +80,9 @@ const RegisterUser = (props) => {
             className="input input-green text "
             onChange={pickGender}
           >
-            <option value="human">human</option>
+            <option value="human">people</option>
             <option value="drag">drag</option>
-            <option value="bots">bots</option>
+            <option value="bots">bot</option>
           </Field>
 
           <Caro />
